@@ -1,50 +1,120 @@
+import Image from "next/image";
 
 export default function Header() {
-  return (
-  <>
-    <header className="bg-pink-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-            <div className="flex items-center justify-between">
-                {/* <!-- Logo Section --> */}
-                <div className="flex-shrink-0">
-                    <a href="#" className="text-2xl font-bold">Стаси Стил </a>
-                </div>
+    return (
+        <header className="bg-pink-900/80 backdrop-blur-md text-white fixed top-0 left-0 w-full z-50 shadow-md transition-all">
+            <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
+                {/* Logo */}
 
-                {/* <!-- Navigation Menu --> */}
-                <nav className="hidden md:flex space-x-10 text-lg">
-                    <a href="#" className="hover:text-gray-300 transition-all">Начало</a>
-                    <a href="#services" className="hover:text-gray-300 transition-all">Услуги</a>
-                    <a href="#about" className="hover:text-gray-300 transition-all">За нас</a>
-                    <a href="#gallery" className="hover:text-gray-300 transition-all">Галерия</a>
-                    <a href="#contact" className="hover:text-gray-300 transition-all">Контакти</a>
+                <a href="#" className="flex items-center space-x-2">
+                    <Image
+                        src="/logo.png"
+                        alt="Стаси Стил"
+                        width={120}
+                        height={60}
+                        className="hover:opacity-80 transition-all duration-300"
+                        priority
+                    />
+                </a>
+                {/* Navigation */}
+                <nav className="hidden md:flex items-center space-x-10 text-lg">
+                    <a
+                        href="#"
+                        className="hover:text-pink-200 transition-colors duration-300"
+                    >
+                        Начало
+                    </a>
+                    <a
+                        href="#services"
+                        className="hover:text-pink-200 transition-colors duration-300"
+                    >
+                        Услуги
+                    </a>
+                    <a
+                        href="#about"
+                        className="hover:text-pink-200 transition-colors duration-300"
+                    >
+                        За нас
+                    </a>
+                    <a
+                        href="#gallery"
+                        className="hover:text-pink-200 transition-colors duration-300"
+                    >
+                        Галерия
+                    </a>
+                    <a
+                        href="#contact"
+                        className="hover:text-pink-200 transition-colors duration-300"
+                    >
+                        Контакти
+                    </a>
                 </nav>
 
-                {/* <!-- Call-to-Action Button --> */}
-                <div className="hidden md:block">
-                    <a href="#contact" className="bg-yellow-500 hover:bg-yellow-400 text-black py-2 px-6 rounded-full text-lg transition-all">
-                       Свържи се с нас
-                    </a>
-                </div>
+                {/* Call-to-Action */}
+                <a
+                    href="#contact"
+                    className="hidden md:inline-block bg-yellow-400 text-black font-medium py-2 px-6 rounded-full shadow-md hover:bg-yellow-300 hover:shadow-lg transition-all duration-300"
+                >
+                    Свържи се с нас
+                </a>
 
-                {/* <!-- Mobile Menu Button (for smaller screens) --> */}
-                <div className="md:hidden flex items-center">
-                    <button id="menu-button" className="text-white focus:outline-none">
-                        <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
+                {/* Mobile Menu Button */}
+                <button
+                    className="md:hidden text-white focus:outline-none"
+                    id="menu-button"
+                >
+                    <svg
+                        className="w-7 h-7"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M4 6h16M4 12h16M4 18h16"
+                        />
+                    </svg>
+                </button>
             </div>
 
-            {/* <!-- Mobile Navigation Menu --> */}
-            <div id="mobile-menu" className="md:hidden mt-5 hidden space-y-4">
-                <a href="#" className="block text-lg hover:text-gray-300 transition-all">Home</a>
-                <a href="#services" className="block text-lg hover:text-gray-300 transition-all">Services</a>
-                <a href="#about" className="block text-lg hover:text-gray-300 transition-all">About Us</a>
-                <a href="#contact" className="block text-lg hover:text-gray-300 transition-all">Contact</a>
+            {/* Mobile Menu */}
+            <div
+                id="mobile-menu"
+                className="hidden md:hidden flex flex-col items-center bg-pink-800 py-4 space-y-4 text-lg transition-all"
+            >
+                <a
+                    href="#"
+                    className="hover:text-pink-200 transition-all duration-200"
+                >
+                    Начало
+                </a>
+                <a
+                    href="#services"
+                    className="hover:text-pink-200 transition-all duration-200"
+                >
+                    Услуги
+                </a>
+                <a
+                    href="#about"
+                    className="hover:text-pink-200 transition-all duration-200"
+                >
+                    За нас
+                </a>
+                <a
+                    href="#gallery"
+                    className="hover:text-pink-200 transition-all duration-200"
+                >
+                    Галерия
+                </a>
+                <a
+                    href="#contact"
+                    className="hover:text-pink-200 transition-all duration-200"
+                >
+                    Контакти
+                </a>
             </div>
-        </div>
-    </header>
-    </>
-  );
+        </header>
+    );
 }
