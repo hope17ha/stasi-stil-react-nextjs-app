@@ -5,7 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes blurParallax {
+/* @keyframes  blurParallax {
   0% {
     transform: scale(1) translate(0px, 0px);
     filter: blur(2px) brightness(1);
@@ -18,12 +18,15 @@
     transform: scale(1) translate(0px, 0px);
     filter: blur(2px) brightness(1);
   }
-}
+} */
 
-.animate-blur-parallax {
+/* .animate-blur-parallax {
   animation: blurParallax 30s ease-in-out infinite;
-}
+}  */
 
+.bg-face-left {
+  background-position: 40% 30% !important;
+}
 
 
 :root {
