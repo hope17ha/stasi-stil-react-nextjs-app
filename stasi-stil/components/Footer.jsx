@@ -10,7 +10,7 @@ export default function Footer() {
                 📞 0888 123 456
               </a>
               <span className="opacity-50">|</span>
-              <a href="mailto:info@stasistil.bg" className="hover:text-yellow-400 transition-colors">
+              <a href="mailto:stanislava.anastasova6@gmail.com" className="hover:text-yellow-400 transition-colors">
                 ✉️ stanislava.anastasova6@gmail.com
               </a>
             </div>
