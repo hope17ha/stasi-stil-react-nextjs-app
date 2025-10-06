@@ -6,18 +6,18 @@ export default function Footer() {
           <div className="space-y-1">
             <p className="text-sm font-medium tracking-wide">Стаси Стил</p>
             <div className="flex justify-center space-x-4 text-sm">
-              <a href="tel:0888123456" className="hover:text-[#c084fc] transition-colors">
+              <a href="tel:0888123456" className="hover:text-[#b4ac77] transition-colors">
                 📞 0888 123 456
               </a>
               <span className="opacity-50">|</span>
-              <a href="mailto:stanislava.anastasova6@gmail.com" className="hover:text-[#c084fc] transition-colors">
+              <a href="mailto:stanislava.anastasova6@gmail.com" className="hover:text-[#b4ac77] transition-colors">
                 ✉️ stanislava.anastasova6@gmail.com
               </a>
             </div>
           </div>
   
           {/* Линия и авторско право */}
-          <div className="border-t border-[#c084fc] my-2 opacity-40"></div>
+          <div className="border-t border-[#b4ac77] my-2 opacity-40"></div>
           <p className="text-xs text-gray-400">
             © {new Date().getFullYear()} Стаси Стил. Всички права запазени.
           </p>

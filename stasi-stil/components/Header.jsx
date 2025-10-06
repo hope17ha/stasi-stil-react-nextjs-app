@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Header() {
     return (
-        <header className="bg-backdrop-blur-md text-white fixed top-0 left-0 w-full z-50 shadow-md transition-all">
+        <header className="bg-backdrop-blur-md bg-black/20 text-white fixed top-0 left-0 w-full z-50 shadow-md transition-all">
 
             <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
                 {/* Logo */}
@@ -29,7 +29,7 @@ export default function Header() {
                         <a
                             key={item.label}
                             href={item.href}
-                            className="hover:text-[#c084fc] transition-colors duration-300"
+                            className="relative px-2 py-1 border-b-2 border-transparent hover:border-[#b4ac77] hover:text-[#b4ac77] transition-all duration-300"
                         >
                             {item.label}
                         </a>
@@ -39,7 +39,7 @@ export default function Header() {
                 {/* Call-to-Action */}
                 <a
                     href="#contact"
-                    className="hidden md:inline-block bg-[#c084fc] text-black font-medium py-2 px-6 rounded-full shadow-md hover:bg-[#6b21a8] hover:shadow-lg transition-all duration-300 text-lg"
+                    className="hidden md:inline-block bg-[#b4ac77] text-black font-medium py-2 px-6 rounded-full shadow-md hover:bg-[#9f9246] hover:shadow-lg transition-all duration-300 text-lg"
                 >
                     Свържи се с нас
                 </a>

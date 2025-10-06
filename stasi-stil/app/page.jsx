@@ -7,24 +7,25 @@ export default function Home() {
 
             <div className="absolute inset-0">
                 <Image
-                    src="/hero2.jpg"
+                    src="/hero4.png.png"
                     alt="Hero"
                     fill
-                    style={{ objectFit: "contain", objectPosition: "center" }}
+                    style={{ objectFit: "cover", objectPosition: "40% 15%" }}
                     quality={100}
                     priority
                 />
-                <div className="absolute inset-0 bg-black/30"></div>
+                <div className="absolute inset-0 bg-black/25"></div>
             </div>
 
             {/* Background overlay с blur ефект */}
-            <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
+            <div className="absolute inset-0 bg-black/25"></div>
 
             {/* Hero секция */}
             <section className="relative z-10 flex flex-col items-center justify-center text-center min-h-screen px-6">
                 <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 drop-shadow-lg animate-fade-in">
-                    Добре дошли в{" "}
-                    <span className="text-accent">Стаси Стил</span>
+                <span className="text-accent">Добре дошли в</span>
+                {" "}
+                <span className="text-accent">Стаси Стил !</span>
                 </h1>
 
                 <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl animate-fade-in delay-200">
