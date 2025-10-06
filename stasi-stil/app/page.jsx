@@ -1,10 +1,17 @@
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-gradient-to-br from-primary via-pink-700 to-accent text-white">
-      {/* Background overlay with smooth blur */}
+    <main className="relative min-h-screen overflow-hidden text-white">
+    {/* Фоновият слой с паралакс и blur */}
+    <div
+      className="absolute inset-0 bg-cover bg-center animate-blur-parallax"
+      style={{ backgroundImage: "url('/hero3.jpg')" }}
+    ></div>
+  
+  
+      {/* Background overlay с blur ефект */}
       <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
 
-      {/* Hero section */}
+      {/* Hero секция */}
       <section className="relative z-10 flex flex-col items-center justify-center text-center min-h-screen px-6">
         <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 drop-shadow-lg animate-fade-in">
           Добре дошли в <span className="text-accent">Стаси Стил</span>
@@ -17,17 +24,17 @@ export default function Home() {
 
         <div className="flex flex-col sm:flex-row gap-4">
           <a
-            href="#services"
-            className="bg-accent text-dark font-semibold py-3 px-8 rounded-full shadow-glow hover:scale-105 hover:shadow-xl transition-all duration-300"
+            href="/about"
+            className="bg-transparent border border-white/70 hover:bg-white/20 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300"
           >
-            Виж услугите
+            Научи повече за нас
           </a>
 
           <a
-            href="#contact"
+            href="/services"
             className="bg-transparent border border-white/70 hover:bg-white/20 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300"
           >
-            Свържи се с нас
+            Виж услугите
           </a>
         </div>
       </section>
