@@ -7,7 +7,7 @@ export default function Footer() {
             <p className="text-sm font-medium tracking-wide">Стаси Стил</p>
             <div className="flex justify-center space-x-4 text-sm">
               <a href="tel:0888123456" className="hover:text-[#b4ac77] transition-colors">
-                📞 0888 123 456
+                📞 0897 892 885
               </a>
               <span className="opacity-50">|</span>
               <a href="mailto:stanislava.anastasova6@gmail.com" className="hover:text-[#b4ac77] transition-colors">

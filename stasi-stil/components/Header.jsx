@@ -21,10 +21,10 @@ export default function Header() {
                 <nav className="hidden md:flex items-center space-x-12 text-2xl font-bold">
                     {[
                         { label: "Начало", href: "/" },
-                        { label: "Услуги", href: "/services" },
                         { label: "За нас", href: "/about" },
+                        { label: "Услуги", href: "/services" },
                         { label: "Галерия", href: "/gallery" },
-                        { label: "Контакти", href: "/contact" },
+                        { label: "Контакти", href: "/contacts" },
                     ].map((item) => (
                         <a
                             key={item.label}
@@ -38,7 +38,7 @@ export default function Header() {
 
                 {/* Call-to-Action */}
                 <a
-                    href="#contact"
+                    href="/contacts"
                     className="hidden md:inline-block bg-[#b4ac77] text-black font-medium py-2 px-6 rounded-full shadow-md hover:bg-[#9f9246] hover:shadow-lg transition-all duration-300 text-lg"
                 >
                     Свържи се с нас
