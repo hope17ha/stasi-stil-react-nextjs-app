@@ -41,7 +41,7 @@ export default function Header() {
                     href="/contacts"
                     className="hidden md:inline-block bg-[#b4ac77] text-black font-medium py-2 px-6 rounded-full shadow-md hover:bg-[#9f9246] hover:shadow-lg transition-all duration-300 text-lg"
                 >
-                    Свържи се с нас
+                    Запиши час
                 </a>
             </div>
         </header>

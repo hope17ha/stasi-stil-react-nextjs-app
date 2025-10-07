@@ -1,27 +1,45 @@
+import Image from "next/image";
+
 export default function ContactsPage() {
     return (
-        <section className="bg-blue-50 dark:bg-slate-800 pt-24" id="contact">
-
-            <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-                <div className="mb-4">
-                    <div className="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-12">
-                        <h2 className="font-heading mb-4 font-bold tracking-tight text-gray-900 dark:text-white text-3xl sm:text-5xl">
-                           Свържи се с нас
-                        </h2>
-                        <p className="mx-auto mt-4 max-w-3xl text-xl text-gray-600 dark:text-slate-400">
-                            Винаги сме насреща да ви помогнем!
-                        </p>
-                    </div>
+        <section className="relative min-h-screen pt-24" id="contact">
+            {/* Фоново изображение */}
+            <div className="absolute inset-0 -z-10 backdrop-blur-sm">
+                <div className="relative w-full h-full">
+                    <Image
+                        src="/contacts2.jpg"
+                        alt="Contacts"
+                        fill
+                        style={{ objectFit: "none", objectPosition: "30% 50%" }}
+                        quality={100}
+                        priority
+                    />
                 </div>
+                <div className="absolute inset-0 bg-black/50"></div>
+            </div>
+
+            {/* Съдържание */}
+            <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+                <div className="mb-4 text-center">
+                    <h2 className="font-heading mb-4 font-bold tracking-tight text-[#b4ac77] text-3xl sm:text-5xl">
+                        Свържи се с нас
+                    </h2>
+                    <p className="mx-auto mt-4 max-w-3xl text-xl text-white/80">
+                        Винаги сме насреща да ви помогнем!
+                    </p>
+                </div>
+
                 <div className="flex items-stretch justify-center">
-                    <div className="grid md:grid-cols-2">
-                        <div className="h-full pr-6">
-                            <p className="mt-3 mb-12 text-lg text-gray-600 dark:text-slate-400">
-                                Може да се свържете с нас по допупосочените начини: 
+                    <div className="grid md:grid-cols-2 gap-8">
+                        {/* Ляв блок: информация */}
+                        <div className="h-full pr-6 text-white">
+                            <p className="mt-3 mb-12 text-lg text-white/80">
+                                Може да се свържете с нас по следните начини:
                             </p>
-                            <ul className="mb-6 md:mb-0">
-                                <li className="flex">
-                                    <div className="flex h-10 w-10 items-center justify-center rounded bg-goldish text-gray-50">
+                            <ul className="space-y-6">
+                                <li className="flex border border-gray-300 rounded-lg p-4 bg-black/20">
+                                    <div className="flex h-10 w-10 items-center justify-center rounded bg-goldish text-white">
+                                        {/* Икона */}
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="24"
@@ -38,20 +56,17 @@ export default function ContactsPage() {
                                             <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"></path>
                                         </svg>
                                     </div>
-                                    <div className="ml-4 mb-4">
-                                        <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">
+                                    <div className="ml-4">
+                                        <h3 className="mb-2 text-lg font-medium text-[#b4ac77]">
                                             Нашият адрес
                                         </h3>
-                                        <p className="text-gray-600 dark:text-slate-400">
-                                            ж.к. Младост 1А, ул. Сърчице
-                                        </p>
-                                        <p className="text-gray-600 dark:text-slate-400">
-                                            град София/ България
-                                        </p>
+                                        <p>ж.к. Младост 1А, ул. Сърчице</p>
+                                        <p>град София / България</p>
                                     </div>
                                 </li>
-                                <li className="flex">
-                                    <div className="flex h-10 w-10 items-center justify-center rounded bg-goldish text-gray-50">
+
+                                <li className="flex border border-gray-300 rounded-lg p-4 bg-black/20">
+                                    <div className="flex h-10 w-10 items-center justify-center rounded bg-goldish text-white">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="24"
@@ -69,20 +84,27 @@ export default function ContactsPage() {
                                             <path d="M15 3a6 6 0 0 1 6 6"></path>
                                         </svg>
                                     </div>
-                                    <div className="ml-4 mb-4">
-                                        <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">
+                                    <div className="ml-4 flex flex-col space-y-1">
+                                        <h3 className="mb-2 text-lg font-medium text-[#b4ac77]">
                                             Контакти
                                         </h3>
-                                        <p className="text-gray-600 dark:text-slate-400">
+                                        <a
+                                            href="tel:0897892885"
+                                            className="hover:text-[#b4ac77] transition-colors"
+                                        >
                                             Телефон: +359 897 892 885
-                                        </p>
-                                        <p className="text-gray-600 dark:text-slate-400">
-                                            Mail: stanislava.anastasova6@gmail.com
-                                        </p>
+                                        </a>
+                                        <a
+                                            href="mailto:stanislava.anastasova6@gmail.com"
+                                            className="hover:text-[#b4ac77] transition-colors"
+                                        >
+                                            stanislava.anastasova6@gmail.com
+                                        </a>
                                     </div>
                                 </li>
-                                <li className="flex">
-                                    <div className="flex h-10 w-10 items-center justify-center rounded bg-goldish text-gray-50">
+
+                                <li className="flex border border-gray-300 rounded-lg p-4 bg-black/20">
+                                    <div className="flex h-10 w-10 items-center justify-center rounded bg-goldish text-white">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="24"
@@ -99,38 +121,37 @@ export default function ContactsPage() {
                                             <path d="M12 7v5l3 3"></path>
                                         </svg>
                                     </div>
-                                    <div className="ml-4 mb-4">
-                                        <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">
+                                    <div className="ml-4">
+                                        <h3 className="mb-2 text-lg font-medium text-[#b4ac77]">
                                             Работно време
                                         </h3>
-                                        <p className="text-gray-600 dark:text-slate-400">
-                                            <span>Понеделник - 10:00 - 19:00</span>
-                                            <br></br>
-                                            <span>Вторник - 10:00 - 19:00</span>
-                                            <br></br>
-                                            <span>Сряда - почивен ден</span>
-                                            <br></br>
-                                            <span>Четвъртък - 10:00 - 19:00</span>
-                                            <br></br>
-                                            <span>Петък - 10:00 - 19:00</span>
-                                            <br></br>
-                                            <span>Събота - 10:00 - 17:00</span>
-                                            <br></br>
-                                            <span>Неделя - почивен ден</span>
+                                        <p>
+                                            Понеделник - 10:00 - 19:00
+                                            <br />
+                                            Вторник - 10:00 - 19:00
+                                            <br />
+                                            Сряда - почивен ден
+                                            <br />
+                                            Четвъртък - 10:00 - 19:00
+                                            <br />
+                                            Петък - 10:00 - 19:00
+                                            <br />
+                                            Събота - 10:00 - 17:00
+                                            <br />
+                                            Неделя - почивен ден
                                         </p>
                                     </div>
                                 </li>
                             </ul>
                         </div>
-                        <div
-                            className="card h-fit max-w-6xl px-0 md:px-12  md:py-4"
-                            id="form"
-                        >
+
+                        {/* Десен блок: карта */}
+                        <div className="card h-fit max-w-6xl px-0 md:px-12 md:py-4">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.58560295031!2d23.381856176690174!3d42.648944316800744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa8692b665e98b%3A0x4eec6e976104348b!2z0KHRgtCw0YHQuCDQodGC0LjQuw!5e0!3m2!1sbg!2sbg!4v1759841658726!5m2!1sbg!2sbg"
                                 width="600"
                                 height="450"
-                                style={{border:0}}
+                                style={{ border: 0 }}
                                 allowFullScreen=""
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
