@@ -15,6 +15,7 @@ export default function ContactForm() {
 
         if (!formData.name || !formData.email || !formData.message) {
             setState('error');
+            setErrorMessage('❌ Моля попълнете всички полета правилно.');
             return;
         }
 
@@ -35,7 +36,7 @@ export default function ContactForm() {
                 setFormData({ name: "", email: "", message: "" });
             } else {
                 setState("error");
-                setErrorMessage(data.error || '❌ Моля попълнете всички полета правилно.');
+                setErrorMessage(data.error || 'Възникна грешка.');
             }
         } catch (error) {
             setState("error");
