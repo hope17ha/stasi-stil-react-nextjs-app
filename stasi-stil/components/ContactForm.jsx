@@ -1,4 +1,5 @@
-import { useState } from "react";
+"use client";
+import { use, useState } from "react";
 
 export default function ContactForm() {
     const [state, setState] = useState(null);
@@ -30,45 +31,59 @@ export default function ContactForm() {
     }
 
     return (
-        <form class="space-y-4 bg-black/50 p-6 rounded-xl max-w-lg mx-auto">
-            <h3 class="text-2xl font-semibold text-center text-white mb-4">
+        <form
+            onSubmit={onSubmit}
+            className="space-y-4 bg-black/50 p-6 rounded-xl max-w-lg mx-auto"
+        >
+            <h3 className="text-2xl font-semibold text-center text-white mb-4">
                 Изпрати съобщение
             </h3>
 
             <input
                 type="text"
                 placeholder="Име"
-                class="w-full p-3 rounded bg-white/10 text-white placeholder-gray-400 focus:outline-none"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                className="w-full p-3 rounded bg-white/10 text-white placeholder-gray-400 focus:outline-none"
                 required
             />
 
             <input
                 type="email"
                 placeholder="Имейл"
-                class="w-full p-3 rounded bg-white/10 text-white placeholder-gray-400 focus:outline-none"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                className="w-full p-3 rounded bg-white/10 text-white placeholder-gray-400 focus:outline-none"
                 required
             />
 
             <textarea
                 placeholder="Съобщение"
                 rows="5"
-                class="w-full p-3 rounded bg-white/10 text-white placeholder-gray-400 focus:outline-none"
+                value={formData.message}
+                onChange={(e) => setFormData({...formData, message: e.target.value })}
+                className="w-full p-3 rounded bg-white/10 text-white placeholder-gray-400 focus:outline-none"
                 required
             ></textarea>
 
             <button
                 type="submit"
-                class="w-full bg-[#b4ac77] text-black font-semibold py-3 rounded hover:bg-[#c5bb7f] transition"
+                disabled={state === "loading"}
+                className="w-full bg-[#b4ac77] text-black font-semibold py-3 rounded hover:bg-[#c5bb7f] transition"
             >
-                Изпрати
+                {state === "loading" ? "Изпращане..." : "Изпрати"}
             </button>
 
-            <p class="text-green-400 text-center">
-                ✅ Съобщението е изпратено успешно!
-            </p>
-            <p class="text-red-400 text-center">
-                ❌ Възникна грешка. Опитайте отново.
-            </p>
+            {state === "success" && (
+                <p className="text-green-400 text-center">
+                    ✅ Съобщението е изпратено успешно!
+                </p>
+            )}
+            {state === "error" && (
+                <p className="text-red-400 text-center">
+                    ❌ Възникна грешка. Опитайте отново.
+                </p>
+            )}
         </form>
     );
 }
