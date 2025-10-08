@@ -11,7 +11,7 @@ export default function ContactForm() {
 
     async function onSubmit(e) {
         e.preventDefault();
-        setState = "loading";
+        setState('loading');
 
         const result = await fetch("/api/contacts", {
             method: POST,
