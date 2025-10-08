@@ -10,7 +10,14 @@ export async function POST(req) {
 
         if (!name || !email || !message) {
             return NextResponse.json(
-                { error: "Missing fields" },
+                { error: "Липсващи полета." },
+                { status: 400 }
+            );
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+            return NextResponse.json(
+                { error: 'Невалиден формат на email адрес.'},
                 { status: 400 }
             );
         }

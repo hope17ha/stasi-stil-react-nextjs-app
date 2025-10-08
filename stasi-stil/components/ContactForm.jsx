@@ -1,5 +1,5 @@
 "use client";
-import { use, useState } from "react";
+import { useState } from "react";
 
 export default function ContactForm() {
     const [state, setState] = useState(null);
@@ -8,21 +8,18 @@ export default function ContactForm() {
         email: "",
         message: "",
     });
+    const [errorMessage, setErrorMessage] = useState('');
 
     async function onSubmit(e) {
         e.preventDefault();
 
-        if (!validateEmail(formData.email)) {
-            setState("invalidMail");
-            return;
-        }
-
         if (!formData.name || !formData.email || !formData.message) {
-            setState("error");
+            setState('error');
             return;
         }
 
-        setState("loading");
+        setState('loading');
+        setErrorMessage('')
 
         try {
             const result = await fetch("/api/contacts", {
@@ -38,11 +35,12 @@ export default function ContactForm() {
                 setFormData({ name: "", email: "", message: "" });
             } else {
                 setState("error");
-                console.error(data.error);
+                setErrorMessage(data.error || '❌ Моля попълнете всички полета правилно.');
             }
         } catch (error) {
             setState("error");
             console.error(err);
+            return;
         }
     }
 
@@ -52,11 +50,6 @@ export default function ContactForm() {
         if (state !== null) {
             setState(null);
         }
-    }
-
-    function validateEmail(email) {
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return regex.test(email);
     }
 
     return (
@@ -114,12 +107,7 @@ export default function ContactForm() {
             )}
             {state === "error" && (
                 <p className="text-red-400 text-center">
-                    ❌ Моля попълнете всички полета правилно.
-                </p>
-            )}
-            {state === "invalid-email" && (
-                <p className="text-yellow-400 text-center">
-                    ⚠ Моля, въведете валиден имейл адрес.
+                    {errorMessage}
                 </p>
             )}
         </form>
