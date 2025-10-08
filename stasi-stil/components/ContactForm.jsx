@@ -11,22 +11,38 @@ export default function ContactForm() {
 
     async function onSubmit(e) {
         e.preventDefault();
+
+        if (!validateEmail(formData.email)) {
+            setState("invalidMail");
+            return;
+        }
+
+        if (!formData.name || !formData.email || !formData.message) {
+            setState("error");
+            return;
+        }
+
         setState("loading");
 
-        const result = await fetch("/api/contacts", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData),
-        });
+        try {
+            const result = await fetch("/api/contacts", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
 
-        const data = await result.json();
+            const data = await result.json();
 
-        if (result.ok) {
-            setState("success");
-            setFormData({ name: "", email: "", message: "" });
-        } else {
+            if (result.ok) {
+                setState("success");
+                setFormData({ name: "", email: "", message: "" });
+            } else {
+                setState("error");
+                console.error(data.error);
+            }
+        } catch (error) {
             setState("error");
-            console.error(data.error);
+            console.error(err);
         }
     }
 
@@ -38,8 +54,14 @@ export default function ContactForm() {
         }
     }
 
+    function validateEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
+
     return (
         <form
+            noValidate
             onSubmit={onSubmit}
             className="space-y-4 bg-black/50 p-6 rounded-xl max-w-lg mx-auto"
         >
@@ -92,7 +114,12 @@ export default function ContactForm() {
             )}
             {state === "error" && (
                 <p className="text-red-400 text-center">
-                    ❌ Възникна грешка. Опитайте отново.
+                    ❌ Моля попълнете всички полета правилно.
+                </p>
+            )}
+            {state === "invalid-email" && (
+                <p className="text-yellow-400 text-center">
+                    ⚠ Моля, въведете валиден имейл адрес.
                 </p>
             )}
         </form>
