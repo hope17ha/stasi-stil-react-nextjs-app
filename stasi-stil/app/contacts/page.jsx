@@ -162,9 +162,14 @@ export default function ContactsPage() {
                     </div>
                 </div>
             </div>
-            <div className="mt-16">
-                <ContactForm />
-            </div>
+            <section className="relative bg-black/70 py-16 px-4">
+                <div className="max-w-3xl mx-auto">
+                    <h2 className="text-3xl font-bold text-center text-[#b4ac77] mb-6">
+                        Изпратете ни съобщение
+                    </h2>
+                    <ContactForm />
+                </div>
+            </section>
         </section>
     );
 }
