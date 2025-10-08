@@ -11,7 +11,7 @@ export default function ContactsPage() {
                         src="/contacts2.jpg"
                         alt="Contacts"
                         fill
-                        style={{ objectFit: "none", objectPosition: "30% 50%" }}
+                        style={{ objectFit: "contain", objectPosition: "30% 50%" }}
                         quality={100}
                         priority
                     />
