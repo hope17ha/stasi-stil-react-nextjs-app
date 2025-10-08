@@ -1,3 +1,4 @@
+import ContactForm from "@/components/ContactForm";
 import Image from "next/image";
 
 export default function ContactsPage() {
@@ -160,34 +161,9 @@ export default function ContactsPage() {
                         </div>
                     </div>
                 </div>
-                <form className="flex flex-col gap-4">
-                    
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Вашето име"
-                        required
-                    />
-
-                    
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Вашият имейл"
-                        required
-                    />
-
-                    
-                    <textarea
-                        name="message"
-                        rows="5"
-                        placeholder="Вашето съобщение"
-                        required
-                    />
-
-                    
-                    <button type="submit">Изпрати</button>
-                </form>
+            </div>
+            <div className="mt-16">
+                <ContactForm />
             </div>
         </section>
     );
