@@ -11,10 +11,10 @@ export default function ContactForm() {
 
     async function onSubmit(e) {
         e.preventDefault();
-        setState('loading');
+        setState("loading");
 
         const result = await fetch("/api/contacts", {
-            method: 'POST',
+            method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),
         });
@@ -30,6 +30,14 @@ export default function ContactForm() {
         }
     }
 
+    function onChange(e) {
+        const { name, value } = e.target;
+        setFormData((prev) => ({ ...prev, [name]: value }));
+        if (state !== null) {
+            setState(null);
+        }
+    }
+
     return (
         <form
             onSubmit={onSubmit}
@@ -41,27 +49,30 @@ export default function ContactForm() {
 
             <input
                 type="text"
+                name="name"
                 placeholder="Име"
                 value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                onChange={onChange}
                 className="w-full p-3 rounded bg-white/10 text-white placeholder-gray-400 focus:outline-none"
                 required
             />
 
             <input
                 type="email"
+                name="email"
                 placeholder="Имейл"
                 value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                onChange={onChange}
                 className="w-full p-3 rounded bg-white/10 text-white placeholder-gray-400 focus:outline-none"
                 required
             />
 
             <textarea
                 placeholder="Съобщение"
+                name="message"
                 rows="5"
                 value={formData.message}
-                onChange={(e) => setFormData({...formData, message: e.target.value })}
+                onChange={onChange}
                 className="w-full p-3 rounded bg-white/10 text-white placeholder-gray-400 focus:outline-none"
                 required
             ></textarea>
