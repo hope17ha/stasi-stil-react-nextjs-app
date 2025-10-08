@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function ContactsPage() {
     return (
-        <section className="relative min-h-screen pt-24" id="contact">
+        <section className="relative min-h-screen pt-24 bg-black/40" id="contact">
             {/* Фоново изображение */}
             <div className="absolute inset-0 -z-10 backdrop-blur-sm">
                 <div className="relative w-full h-full">
@@ -38,7 +38,7 @@ export default function ContactsPage() {
                                 Може да се свържете с нас по следните начини:
                             </p>
                             <ul className="space-y-6">
-                                <li className="flex border border-gray-300 rounded-lg p-4 bg-black/20">
+                                <li className="flex border border-gray-300 rounded-lg p-4 bg-black/40">
                                     <div className="flex h-10 w-10 items-center justify-center rounded bg-goldish text-white">
                                         {/* Икона */}
                                         <svg
@@ -66,7 +66,7 @@ export default function ContactsPage() {
                                     </div>
                                 </li>
 
-                                <li className="flex border border-gray-300 rounded-lg p-4 bg-black/20">
+                                <li className="flex border border-gray-300 rounded-lg p-4 bg-black/40">
                                     <div className="flex h-10 w-10 items-center justify-center rounded bg-goldish text-white">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +105,7 @@ export default function ContactsPage() {
                                     </div>
                                 </li>
 
-                                <li className="flex border border-gray-300 rounded-lg p-4 bg-black/20">
+                                <li className="flex border border-gray-300 rounded-lg p-4 bg-black/40">
                                     <div className="flex h-10 w-10 items-center justify-center rounded bg-goldish text-white">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -148,7 +148,8 @@ export default function ContactsPage() {
                         </div>
 
                         {/* Десен блок: карта */}
-                        <div className="card h-fit max-w-6xl px-0 md:px-12 md:py-4">
+                        <div className="card h-fit max-w-6xl px-0 md:px-12 md:py-4 mt-30 border border-gray-300 rounded-lg bg-black/40 shadow-lg overflow-hidden flex justify-center">
+                            
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.58560295031!2d23.381856176690174!3d42.648944316800744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa8692b665e98b%3A0x4eec6e976104348b!2z0KHRgtCw0YHQuCDQodGC0LjQuw!5e0!3m2!1sbg!2sbg!4v1759841658726!5m2!1sbg!2sbg"
                                 width="600"
