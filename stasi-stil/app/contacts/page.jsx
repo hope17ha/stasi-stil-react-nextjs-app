@@ -21,7 +21,7 @@ export default function ContactsPage() {
             {/* Съдържание */}
             <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
                 <div className="mb-4 text-center">
-                    <h2 className="font-heading mb-4 font-bold tracking-tight text-[#b4ac77] text-3xl sm:text-5xl">
+                    <h2 className="font-heading mb-4 font-bold text-decoration-line tracking-tight text-[#b4ac77] text-3xl sm:text-5xl">
                         Свържи се с нас
                     </h2>
                     <p className="mx-auto mt-4 max-w-3xl text-xl text-white/80">
@@ -98,6 +98,7 @@ export default function ContactsPage() {
                                             href="mailto:stanislava.anastasova6@gmail.com"
                                             className="hover:text-[#b4ac77] transition-colors"
                                         >
+                                            Mail:
                                             stanislava.anastasova6@gmail.com
                                         </a>
                                     </div>
@@ -159,6 +160,34 @@ export default function ContactsPage() {
                         </div>
                     </div>
                 </div>
+                <form className="flex flex-col gap-4">
+                    
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Вашето име"
+                        required
+                    />
+
+                    
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Вашият имейл"
+                        required
+                    />
+
+                    
+                    <textarea
+                        name="message"
+                        rows="5"
+                        placeholder="Вашето съобщение"
+                        required
+                    />
+
+                    
+                    <button type="submit">Изпрати</button>
+                </form>
             </div>
         </section>
     );

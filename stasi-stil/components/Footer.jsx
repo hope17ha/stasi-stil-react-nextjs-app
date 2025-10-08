@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-      <footer className="fixed bottom-0 left-0 w-full backdrop-blur-md text-white z-50 shadow-md transition-all">
+      <footer className="w-full backdrop-blur-md text-white z-50 shadow-md transition-all">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Контакти */}
           <div className="space-y-1">
