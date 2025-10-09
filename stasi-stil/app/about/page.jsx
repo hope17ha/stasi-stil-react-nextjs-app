@@ -1,9 +1,18 @@
 import Image from "next/image";
 
 export default function AboutPage() {
-
-    const personalPhotos = Array.from({length: 3}, (_, i) => `/personal-${i+1}.jpeg`)
-    const seminarPhotos = Array.from({length: 7}, (_, i) => `/seminar-${i+1}.jpeg`);
+    const personalPhotos = Array.from(
+        { length: 3 },
+        (_, i) => `/personal-${i + 1}.jpeg`
+    );
+    const seminarPhotos = Array.from(
+        { length: 7 },
+        (_, i) => `/seminar-${i + 1}.jpeg`
+    );
+    const salonPhotos = Array.from(
+        { length: 4 },
+        (_, i) => `/salon-${i + 1}.jpeg`
+    );
 
     return (
         <section className="relative min-h-screen pt-24 bg-black/40" id="about">
@@ -105,18 +114,21 @@ export default function AboutPage() {
                             Лични моменти
                         </h3>
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {personalPhotos.map((src,i) => {
+                            {personalPhotos.map((src, i) => {
                                 return (
-                            <div key={i} className="relative h-[32rem] rounded-2xl overflow-hidden group">
-                                <Image
-                                    src={src}
-                                    alt={`Лична снимка ${i + 1}`}
-                                    fill
-                                    style={{ objectFit: "cover"}}
-                                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                                />
-                                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
-                            </div>
+                                    <div
+                                        key={i}
+                                        className="relative h-[32rem] rounded-2xl overflow-hidden group"
+                                    >
+                                        <Image
+                                            src={src}
+                                            alt={`Лична снимка ${i + 1}`}
+                                            fill
+                                            style={{ objectFit: "cover" }}
+                                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                        />
+                                        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
+                                    </div>
                                 );
                             })}
                         </div>
@@ -128,19 +140,21 @@ export default function AboutPage() {
                             Семинари и обучения
                         </h3>
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                           {seminarPhotos.map((src,i) => {
-                            return (
-                            <div key={i} className="relative h-[32rem] rounded-2xl overflow-hidden group">
-                                <img
-                                    src={src}
-                                    alt={`Снимка от семинар ${i + 1}`}
-                                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                                />
-                                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
-                            </div>
-
-                            );
-                           })}
+                            {seminarPhotos.map((src, i) => {
+                                return (
+                                    <div
+                                        key={i}
+                                        className="relative h-[32rem] rounded-2xl overflow-hidden group"
+                                    >
+                                        <img
+                                            src={src}
+                                            alt={`Снимка от семинар ${i + 1}`}
+                                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                        />
+                                        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
 
@@ -150,15 +164,19 @@ export default function AboutPage() {
                             Салонът „Стаси Стил“
                         </h3>
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {/* map salonPhotos тук */}
-                            <div className="relative h-64 rounded-2xl overflow-hidden group">
+                            {salonPhotos.map((src,i) => {
+                                return (
+                            <div key={i} className="relative h-[32rem] rounded-2xl overflow-hidden group">
                                 <img
-                                    src="/salon1.jpg"
-                                    alt="Снимка на салона 1"
+                                    src={src}
+                                    alt={`Снимка на салона ${i+1}`}
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
                             </div>
+
+                                )
+                            })}
                         </div>
                     </div>
                 </section>
