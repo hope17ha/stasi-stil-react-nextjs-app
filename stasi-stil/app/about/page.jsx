@@ -1,6 +1,9 @@
 import Image from "next/image";
 
 export default function AboutPage() {
+
+    const seminarPhotos = Array.from({length: 7}, (_, i) => `/seminar-${i+1}.jpeg`);
+
     return (
         <section className="relative min-h-screen pt-24 bg-black/40" id="about">
             <div className="absolute inset-0 -z-10 backdrop-blur-sm">
@@ -103,13 +106,12 @@ export default function AboutPage() {
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             {['/personal-1.jpeg', '/personal-2.jpeg', '/personal-3.jpeg'].map((src,i) => {
                                 return (
-                            <div key={i} className="relative h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden group">
+                            <div key={i} className="relative h-[32rem] rounded-2xl overflow-hidden group">
                                 <Image
                                     src={src}
                                     alt={`Лична снимка ${i + 1}`}
                                     fill
-                                    style={{ objectFit: "cover",
-                                            objectPosition: "40% 20%", }}
+                                    style={{ objectFit: "cover"}}
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
@@ -125,15 +127,19 @@ export default function AboutPage() {
                             Семинари и обучения
                         </h3>
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {/* map seminars тук */}
-                            <div className="relative h-64 rounded-2xl overflow-hidden group">
+                           {seminarPhotos.map((src,i) => {
+                            return (
+                            <div key={i} className="relative h-[32rem] rounded-2xl overflow-hidden group">
                                 <img
-                                    src="/seminar1.jpg"
-                                    alt="Снимка от семинар 1"
+                                    src={src}
+                                    alt={`Снимка от семинар ${i + 1}`}
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
                             </div>
+
+                            );
+                           })}
                         </div>
                     </div>
 
