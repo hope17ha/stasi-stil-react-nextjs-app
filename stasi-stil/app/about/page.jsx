@@ -10,19 +10,30 @@ export default function AboutPage() {
         (_, i) => `/seminar-${i + 1}.jpeg`
     );
     const salonPhotos = Array.from(
-        { length: 4 },
+        { length: 7 },
         (_, i) => `/salon-${i + 1}.jpeg`
     );
 
     return (
         <section className="relative min-h-screen pt-24 bg-black/40" id="about">
             <div className="absolute inset-0 -z-10 backdrop-blur-sm">
-                <div className="relative w-full h-full">
+                <div
+                    className="relative w-full h-full"
+                    // style={{
+                    //     backgroundImage: "url('/contacts2.jpg')",
+                    //     backgroundRepeat: "repeat",
+                    //     backgroundSize: "600px 600px",
+                    //     backgroundPosition: "center",
+                    // }}
+                >
                     <Image
-                        src="/contacts1.jpg"
+                        src="/contacts2.jpg"
                         alt="About Stasi Stil"
                         fill
-                        style={{ objectFit: "cover", objectPosition: "center" }}
+                        style={{
+                            objectFit: "contain",
+                            objectPosition: "30% 50%",
+                        }}
                         quality={100}
                         priority
                     />
@@ -65,7 +76,7 @@ export default function AboutPage() {
                             отваря врати през май 2001 г. с мисия да създава
                             красота, увереност и индивидуален стил чрез силата
                             на прическата. Основател и водещ стилист е{" "}
-                            <span className="font-semibold">
+                            <span className="font-semibold text-[#b4ac77]">
                                 Станислава Анастасова
                             </span>{" "}
                             – майстор фризьор с дългогодишен опит и страст към
@@ -82,20 +93,21 @@ export default function AboutPage() {
 
                         <p>
                             Станислава непрекъснато усъвършенства уменията си,
-                            като участва в обучения на{" "}
-                            <span className="italic">
+                            като има сертификати от{" "}
+                            <span className="italic text-[#b4ac77]">
                                 Keune Academy (Холандия), Sassoon Academy
                                 (Лондон), Artistique, American Crew Barber
                                 Class, Christian of Roma
                             </span>{" "}
-                            и други водещи академии. Притежава{" "}
-                            <span className="font-semibold">
+                            и други водещи академии. 
+                        </p>
+                        <p>Притежава{" "}
+                            <span className="font-semibold text-[#b4ac77]">
                                 Майсторско свидетелство
                             </span>{" "}
                             от Националната занаятчийска камара на Република
                             България.
-                        </p>
-
+                            </p>
                         <p>
                             Позитивна и приятелски настроена, тя вярва, че
                             добрата визия започва с доверие и индивидуален
@@ -164,18 +176,20 @@ export default function AboutPage() {
                             Салонът „Стаси Стил“
                         </h3>
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {salonPhotos.map((src,i) => {
+                            {salonPhotos.map((src, i) => {
                                 return (
-                            <div key={i} className="relative h-[32rem] rounded-2xl overflow-hidden group">
-                                <img
-                                    src={src}
-                                    alt={`Снимка на салона ${i+1}`}
-                                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                                />
-                                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
-                            </div>
-
-                                )
+                                    <div
+                                        key={i}
+                                        className="relative h-[32rem] rounded-2xl overflow-hidden group"
+                                    >
+                                        <img
+                                            src={src}
+                                            alt={`Снимка на салона ${i + 1}`}
+                                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                        />
+                                        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
+                                    </div>
+                                );
                             })}
                         </div>
                     </div>
