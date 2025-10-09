@@ -2,6 +2,7 @@ import Image from "next/image";
 
 export default function AboutPage() {
 
+    const personalPhotos = Array.from({length: 3}, (_, i) => `/personal-${i+1}.jpeg`)
     const seminarPhotos = Array.from({length: 7}, (_, i) => `/seminar-${i+1}.jpeg`);
 
     return (
@@ -32,7 +33,7 @@ export default function AboutPage() {
 
                 <div className="grid md:grid-cols-2 gap-10 items-center">
                     {/* Лява част – снимка */}
-                    <div className="relative w-full h-[750px] rounded-2xl overflow-hidden shadow-lg">
+                    <div className="relative w-full h-[650px] rounded-2xl overflow-hidden shadow-lg">
                         <Image
                             src="/about-main.jpeg"
                             alt="Stasi Stil Salon"
@@ -104,7 +105,7 @@ export default function AboutPage() {
                             Лични моменти
                         </h3>
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {['/personal-1.jpeg', '/personal-2.jpeg', '/personal-3.jpeg'].map((src,i) => {
+                            {personalPhotos.map((src,i) => {
                                 return (
                             <div key={i} className="relative h-[32rem] rounded-2xl overflow-hidden group">
                                 <Image
