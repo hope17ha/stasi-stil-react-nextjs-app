@@ -29,7 +29,7 @@ export default function AboutPage() {
 
                 <div className="grid md:grid-cols-2 gap-10 items-center">
                     {/* Лява част – снимка */}
-                    <div className="relative w-full h-[450px] rounded-2xl overflow-hidden shadow-lg">
+                    <div className="relative w-full h-[750px] rounded-2xl overflow-hidden shadow-lg">
                         <Image
                             src="/about-main.jpeg"
                             alt="Stasi Stil Salon"
@@ -101,15 +101,21 @@ export default function AboutPage() {
                             Лични моменти
                         </h3>
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {/* map personalPhotos тук */}
-                            <div className="relative h-64 rounded-2xl overflow-hidden group">
-                                <img
-                                    src="/personal1.jpg"
-                                    alt="Лична снимка 1"
+                            {['/personal-1.jpeg', '/personal-2.jpeg', '/personal-3.jpeg'].map((src,i) => {
+                                return (
+                            <div key={i} className="relative h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden group">
+                                <Image
+                                    src={src}
+                                    alt={`Лична снимка ${i + 1}`}
+                                    fill
+                                    style={{ objectFit: "cover",
+                                            objectPosition: "40% 20%", }}
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
                             </div>
+                                );
+                            })}
                         </div>
                     </div>
 
