@@ -24,6 +24,7 @@ export default function Header() {
                         { label: "Услуги", href: "/services" },
                         { label: "Галерия", href: "/gallery" },
                         { label: "Контакти", href: "/contacts" },
+                        { label: "Отзиви", href: "/reviews" },
                     ].map((item) => (
                         <a
                             key={item.label}
