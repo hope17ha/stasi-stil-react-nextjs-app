@@ -1,7 +1,22 @@
+import Image from 'next/image';
+
 export default function ServicesPage() {
     return (
       <section className="bg-black/40 py-28" id="services">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 -z-10 backdrop-blur-sm"></div>
+        <Image
+            src="/contacts2.jpg"
+            alt="Salon background"
+            fill
+            style={{
+              objectFit: "contain",
+              objectPosition: "30% 50%",
+            }}
+            quality={100}
+            priority
+          />
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Заглавие */}
           <div className="mb-16 text-center">
             <h2 className="font-heading mb-4 font-bold tracking-tight text-[#b4ac77] text-3xl sm:text-5xl">
@@ -16,7 +31,7 @@ export default function ServicesPage() {
           <article className="flex flex-col md:flex-row items-center bg-gradient-to-br from-black/60 to-black/30 border border-gray-400 rounded-3xl overflow-hidden shadow-2xl mb-16 hover:scale-[1.02] transition-transform duration-500 ease-in-out">
             <div className="w-full md:w-1/2 lg:w-2/5 h-96 relative flex-shrink-0">
               <img
-                src="/services/hairdresser.jpg"
+                src="/services/hairdo.jpeg"
                 alt="Фризьор прави подстригване"
                 className="absolute inset-0 w-full h-full object-cover rounded-l-3xl md:rounded-none md:rounded-l-3xl"
               />
@@ -42,7 +57,7 @@ export default function ServicesPage() {
           <article className="flex flex-col md:flex-row-reverse items-center bg-gradient-to-bl from-black/60 to-black/30 border border-gray-400 rounded-3xl overflow-hidden shadow-2xl mb-16 hover:scale-[1.02] transition-transform duration-500 ease-in-out">
             <div className="w-full md:w-1/2 lg:w-2/5 h-96 relative flex-shrink-0">
               <img
-                src="/services/coloring.jpg"
+                src="/services/haircolor.jpg"
                 alt="Стайлинг и боядисване на коса"
                 className="absolute inset-0 w-full h-full object-cover rounded-r-3xl md:rounded-none md:rounded-r-3xl"
               />
