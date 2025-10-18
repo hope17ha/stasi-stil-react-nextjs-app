@@ -3,19 +3,9 @@ import ServicesCard from '@/components/ServicesCard';
 
 export default function ServicesPage() {
     return (
-      <section className="bg-black/40 py-28" id="services">
+      <section className="relative bg-black/40 py-28 bg-[url('/contacts2.jpg')] bg-cover bg-repeat bg-center" id="services">
         <div className="absolute inset-0 -z-10 backdrop-blur-sm"></div>
-        <Image
-            src="/contacts2.jpg"
-            alt="Salon background"
-            fill
-            style={{
-              objectFit: "contain",
-              objectPosition: "30% 50%",
-            }}
-            quality={100}
-            priority
-          />
+        
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Заглавие */}

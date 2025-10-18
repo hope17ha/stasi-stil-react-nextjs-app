@@ -196,6 +196,10 @@ export default function ServicesCard() {
                       : "max-h-0 opacity-0 mt-0"
                   }`}
                 >
+                    <p className="text-[#b4ac77]/90 text-sm md:text-base leading-relaxed mt-6 border-t border-[#b4ac77]/30 pt-4 italic">
+                        Цените включват свободно изсушаване и стилизиране на косата. 
+                        Всички цени са в български лева/евро, с включено ДДС за 1 брой услуга.
+                         Цената за боядисване е за един брой опаковка или за една доза.</p>
                   <ul className="text-white/90 space-y-3 px-10 py-8 bg-black/40 rounded-3xl border border-gray-700 shadow-inner w-full">
                     {s.prices.map((price, i) => (
                       <li
