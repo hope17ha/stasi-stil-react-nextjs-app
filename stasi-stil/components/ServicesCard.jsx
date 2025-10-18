@@ -1,3 +1,6 @@
+"use client";
+import { useState } from "react";
+
 export default function ServicesCard() {
     const services = [
         {
@@ -138,10 +141,11 @@ export default function ServicesCard() {
                     type: "Официална прическа",
                     price: "100 лв/51.13€",
                 },
-                
             ],
         },
     ];
+
+    const [openMoreId, setOpenMore] = useState(null);
 
     return (
         <div>
@@ -167,10 +171,46 @@ export default function ServicesCard() {
                                 {s.description}
                             </p>
                             <div className="flex flex-wrap gap-4">
-                                <button className="inline-block rounded-full border border-[#b4ac77] px-6 py-3 text-sm font-medium text-white transition-colors duration-300 hover:bg-[#b4ac77] hover:text-black">
-                                    Научи повече
+                                <button
+                                    onClick={() =>
+                                        setOpenMore(
+                                            openMoreId === s.id ? null : s.id
+                                        )
+                                    }
+                                    className="inline-block rounded-full border border-[#b4ac77] px-6 py-3 text-sm font-medium text-white transition-colors duration-300 hover:bg-[#b4ac77] hover:text-black"
+                                >
+                                    {openMoreId === s.id ? 'Скрий подробности' : 'Научи повече'}
+                                    
                                 </button>
                             </div>
+                        </div>
+
+                        <div className={`overflow-hidden transition-all duration-700 ease-in-out ${
+                openMoreId === s.id ? "max-h-96 mt-6 opacity-100" : "max-h-0 opacity-0"
+              }`}
+              style={{
+                maxHeight: openMoreId === s.id ? `${s.prices.length * 90}px` : "0px",
+              }}>
+                            <ul className="text-white/90 space-y-3">
+                                {s.prices.map((price, i) => (
+                                     <li
+                                     key={i}
+                                     className="flex justify-between border-b border-white/10 pb-2">
+                                     <span>{price.type}</span>
+                                     {price.byLength ? (
+                                        <div className="flex justify-between sm:gap-10 text-[#b4ac77] font-semibold mt-2 sm:mt-0 text-sm sm:text-base">
+                                        <span>Къса: {price.byLength.short}</span>
+                                        <span>Средна: {price.byLength.medium}</span>
+                                        <span>Дълга: {price.byLength.long}</span>
+                                      </div>
+                                     ) : (
+                                        <span className="text-[#b4ac77] font-semibold text-base sm:text-lg mt-2 sm:mt-0">
+                                        {price.price}
+                                      </span>
+                                     )}
+                                 </li>
+                                ))}
+                            </ul>
                         </div>
                     </article>
                 );
