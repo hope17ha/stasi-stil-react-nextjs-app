@@ -3,7 +3,6 @@ import Image from "next/image";
 export default function Home() {
     return (
         <main className="relative min-h-screen overflow-hidden text-white">
-            {/* Фоновият слой с паралакс и blur */}
 
             <div className="absolute inset-0">
                 <Image
@@ -47,6 +46,12 @@ export default function Home() {
                         className="bg-transparent border border-white/70 hover:bg-white/20 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300"
                     >
                         Виж услугите
+                    </a>
+                    <a
+                        href="#"
+                        className="bg-transparent border border-white/70 hover:bg-white/20 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300"
+                    >
+                        Запази час
                     </a>
                 </div>
             </section>
