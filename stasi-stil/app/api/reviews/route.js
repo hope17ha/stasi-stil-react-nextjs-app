@@ -2,7 +2,7 @@
 
 export async function GET(){
 
-    const fetchURI = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${process.env.PLACE_ID}&fields=name,formatted_address,rating,user_ratings_total,reviews&key=${process.env.GOOGLE_API_KEY}`;
+    const fetchURI = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${process.env.PLACE_ID}&fields=name,formatted_address,rating,user_ratings_total,reviews&key=${process.env.GOOGLE_API_KEY}&language=bg`;
     
 
 
