@@ -2,10 +2,15 @@
 
 export async function GET(){
 
-    try {
-        const response = await fetch(`https://places.googleapis.com/v1/places/${process.env.PLACE_ID}?fields=reviews&key=${process.env.GOOGLE_API_KEY}`);
+    const fetchURI = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${process.env.PLACE_ID}&fields=name,formatted_address,rating,user_ratings_total,reviews&key=${process.env.GOOGLE_API_KEY}`;
     
-        const data = response.json();
+
+
+    try {
+        const response = await fetch(fetchURI);
+        console.log(fetchURI);
+    
+        const data = await response.json();
         
     
         return new Response(JSON.stringify(data.result), {
