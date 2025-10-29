@@ -1,6 +1,20 @@
+"use client"
 import Image from 'next/image';
+import { useEffect } from 'react';
 
 export default function ReviewPage() {
+
+    useEffect(() => {
+        async function getReviews(){
+            
+            const result = await fetch('/api/reviews');
+            const data = await result.json();
+            console.log(data);
+        }
+
+        getReviews()
+    }, [])
+
     return (
         <section className="relative min-h-screen py-24 bg-black/40 flex items-center" id="reviews">
 
