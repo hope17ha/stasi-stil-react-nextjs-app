@@ -16,13 +16,13 @@ export default function ServicesCard() {
                 <article
                   className={`flex flex-col md:flex-row ${
                     isReverse ? "md:flex-row-reverse" : ""
-                  } items-center bg-gradient-to-br from-black/60 to-black/30 border border-gray-400 rounded-3xl overflow-hidden shadow-2xl hover:scale-[1.02] transition-transform duration-500 ease-in-out`}
+                  } items-center bg-gradient-to-br from-black/60 to-black/30 border border-gray-400 rounded-3xl overflow-hidden shadow-2xl hover:scale-[1.02] transition-transform duration-500 ease-in-out aspect-[7/4] max-w-4xl mx-auto`}
                 >
-                  <div className="w-full md:w-1/2 lg:w-2/5 h-96 relative flex-shrink-0">
+                  <div className="w-full md:w-1/2 lg:w-1/2 h-96 relative flex-shrink-0">
                     <img
                       src={s.img}
                       alt={s.alt}
-                      className="absolute inset-0 w-full h-full object-cover rounded-l-3xl md:rounded-none md:rounded-l-3xl"
+                      className="absolute inset-3 w-[calc(100%-1.5rem)] h-[calc(100%-1.5rem)] object-cover rounded-2xl"
                     />
                   </div>
                   <div className="w-full md:w-1/2 lg:w-3/5 p-10">
@@ -49,7 +49,7 @@ export default function ServicesCard() {
     
                 
                 <div
-                  className={`transition-[max-height,opacity,margin-top] duration-700 ease-in-out overflow-hidden ${
+                  className={`transition-[max-height,opacity,margin-top] duration-700 ease-in-out overflow-hidden aspect-[7/4] max-w-4xl mx-auto ${
                     openMoreId === s.id
                       ? "max-h-[1000px] opacity-100 mt-6"
                       : "max-h-0 opacity-0 mt-0"
