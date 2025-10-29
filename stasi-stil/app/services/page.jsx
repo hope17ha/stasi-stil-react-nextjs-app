@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import ServicesCard from '@/components/ServicesCard';
 
 export default function ServicesPage() {

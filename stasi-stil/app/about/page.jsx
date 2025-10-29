@@ -1,18 +1,8 @@
 import Image from "next/image";
+import { salonPhotos, seminarPhotos, personalPhotos } from '@/data/photos'
 
 export default function AboutPage() {
-    const personalPhotos = Array.from(
-        { length: 3 },
-        (_, i) => `/personal-${i + 1}.jpeg`
-    );
-    const seminarPhotos = Array.from(
-        { length: 7 },
-        (_, i) => `/seminar-${i + 1}.jpeg`
-    );
-    const salonPhotos = Array.from(
-        { length: 7 },
-        (_, i) => `/salon-${i + 1}.jpeg`
-    );
+    
 
     return (
         <section className="relative min-h-screen pt-24 bg-black/40" id="about">
