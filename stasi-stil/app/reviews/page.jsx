@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function ReviewPage() {
     const [reviews, setReviews] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         async function getReviews() {
@@ -11,10 +12,14 @@ export default function ReviewPage() {
                 const result = await fetch("/api/reviews");
 
                 const data = await result.json();
-                console.log(data);
+                // console.log(data);
+                setLoading(true);
+
 
                 setReviews(data.reviews || []);
+                setLoading(false);
             } catch (error) {
+                setLoading(false);
                 console.error("Failed to fetch reviews:", error);
             }
         }
@@ -56,7 +61,11 @@ export default function ReviewPage() {
                 {/* Картичка за отзив */}
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    {reviews.length === 0 ? (
+                    {
+                    loading ? (
+                        <p className="text-gray-300 text-center">Зареждане на ревюта...</p>
+                      ) :
+                    reviews.length === 0 ? (
                         <p className="text-gray-300 text-center">
                             Все още няма ревюта.
                         </p>
