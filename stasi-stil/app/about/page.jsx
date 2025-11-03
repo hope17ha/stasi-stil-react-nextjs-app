@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { salonPhotos, seminarPhotos, personalPhotos } from '@/data/photos'
+import { salonPhotos, seminarPhotos, personalPhotos } from '@/data/aboutPhotos'
 
 export default function AboutPage() {
     
