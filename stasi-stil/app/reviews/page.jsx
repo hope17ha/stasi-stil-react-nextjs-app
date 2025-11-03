@@ -15,7 +15,6 @@ export default function ReviewPage() {
                 // console.log(data);
                 setLoading(true);
 
-
                 setReviews(data.reviews || []);
                 setLoading(false);
             } catch (error) {
@@ -29,7 +28,7 @@ export default function ReviewPage() {
 
     return (
         <section
-            className="relative min-h-screen py-24 bg-black/40 flex items-center"
+            className="relative min-h-screen py-24 bg-black/40 flex flex-col items-center"
             id="reviews"
         >
             <div className="absolute inset-0 -z-10 backdrop-blur-sm">
@@ -61,11 +60,11 @@ export default function ReviewPage() {
                 {/* Картичка за отзив */}
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    {
-                    loading ? (
-                        <p className="text-gray-300 text-center">Зареждане на ревюта...</p>
-                      ) :
-                    reviews.length === 0 ? (
+                    {loading ? (
+                        <p className="text-gray-300 text-center">
+                            Зареждане на ревюта...
+                        </p>
+                    ) : reviews.length === 0 ? (
                         <p className="text-gray-300 text-center">
                             Все още няма ревюта.
                         </p>
@@ -112,6 +111,17 @@ export default function ReviewPage() {
                         })
                     )}
                 </div>
+            </div>
+            <div className="flex justify-center mt-12">
+                <a
+                    href="https://g.page/r/CYs0BGGXbuxOEBM/review"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#b4ac77] text-black font-medium py-2 px-6 rounded-full shadow-md hover:bg-[#9f9246] hover:shadow-lg transition-all duration-300 text-base text-center"
+                >
+                    Искате ли да споделите как ни оценявате? Натиснете тук, за
+                    да оставите отзив!
+                </a>
             </div>
         </section>
     );
