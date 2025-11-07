@@ -114,15 +114,17 @@ export default function ReviewPage() {
                 </div>
             </div>
             <div className="flex justify-center mt-12">
+            <p className="text-center text-white/90 text-lg sm:text-xl max-w-2xl leading-relaxed">
+            Искате ли да споделите как ни оценявате? За да оставите отзив,{" "}
                 <a
                     href="https://g.page/r/CYs0BGGXbuxOEBM/review"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-[#b4ac77] text-black font-medium py-2 px-6 rounded-full shadow-md hover:bg-[#9f9246] hover:shadow-lg transition-all duration-300 text-base text-center"
                 >
-                    Искате ли да споделите как ни оценявате? Натиснете тук, за
-                    да оставите отзив!
-                </a>
+                   натиснете тук
+                </a> {" "}
+                </p>
             </div>
         </section>
     );
