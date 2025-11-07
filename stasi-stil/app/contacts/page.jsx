@@ -1,6 +1,11 @@
 import ContactForm from "@/components/ContactForm";
 import Image from "next/image";
 
+
+export const metadata = {
+    title: 'Контакти | СТАСИ СТИЛ ФРИЗЬОРСКИ САЛОН'
+};
+
 export default function ContactsPage() {
     return (
         <section className="relative min-h-screen pt-24 bg-black/40" id="contact">

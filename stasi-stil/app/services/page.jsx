@@ -1,5 +1,9 @@
 import ServicesCard from '@/components/ServicesCard';
 
+export const metadata = {
+  title: 'Фризьорски услуги | СТАСИ СТИЛ ФРИЗЬОРСКИ САЛОН'
+};
+
 export default function ServicesPage() {
     return (
       <section className="relative bg-black/40 py-28 bg-[url('/contacts2.jpg')] bg-cover bg-repeat bg-center" id="services">

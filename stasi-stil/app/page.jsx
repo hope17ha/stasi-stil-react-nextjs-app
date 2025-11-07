@@ -1,5 +1,9 @@
 import Image from "next/image";
 
+export const metadata = {
+    title: 'Начална страница | СТАСИ СТИЛ ФРИЗЬОРСКИ САЛОН'
+};
+
 export default function Home() {
     return (
         <main className="relative min-h-screen overflow-hidden text-white">

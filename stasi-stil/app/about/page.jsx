@@ -1,6 +1,11 @@
 import Image from "next/image";
 import { salonPhotos, seminarPhotos, personalPhotos } from '@/data/aboutPhotos'
 
+
+export const metadata = {
+    title: 'За нас | СТАСИ СТИЛ ФРИЗЬОРСКИ САЛОН'
+};
+
 export default function AboutPage() {
     
 
