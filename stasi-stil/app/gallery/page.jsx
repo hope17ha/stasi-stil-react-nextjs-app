@@ -9,20 +9,37 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function GalleryPage() {
+    const allPhotos = [
+        ...hairstylePhotos,
+        ...haircolorPhotos,
+        ...haircutPhotos,
+    ];
+    const [selectedIndex, setSelectedIndex] = useState(null);
 
-    const [selectedImage, setSelectedImage] = useState(null);
+    const prevPhoto = () => {
+        setSelectedIndex(
+            (selectedIndex + allPhotos.length - 1) % allPhotos.length
+        );
+    };
+
+    const nextPhoto = () => {
+        setSelectedIndex((selectedIndex + 1) % allPhotos.length);
+    };
 
     useEffect(() => {
         const handleKeydown = (e) => {
-            if (e.key === 'Escape'){
-                setSelectedImage(null);
-            };
+            if (e.key === "Escape") {
+                setSelectedIndex(null);
+            } else if (e.key === "ArrowLeft") {
+                prevPhoto();
+            } else if (e.key === "ArrowRight") {
+                nextPhoto();
+            }
         };
 
-        window.addEventListener('keydown', handleKeydown);
-        return () => window.removeEventListener('keydown', handleKeydown);
-
-    }, []);
+        window.addEventListener("keydown", handleKeydown);
+        return () => window.removeEventListener("keydown", handleKeydown);
+    }, [selectedIndex]);
 
     return (
         <section
@@ -50,32 +67,35 @@ export default function GalleryPage() {
                 <GallerySection
                     title="Прически"
                     photos={hairstylePhotos}
-                    onClickPhoto={setSelectedImage}
+                    onClickPhoto={(index) => setSelectedIndex(index)}
                 />
 
                 {/* === Section 2 === */}
-               <GallerySection
+                <GallerySection
                     title="Боядисване и кичури"
                     photos={haircolorPhotos}
-                    onClickPhoto={setSelectedImage}
+                    onClickPhoto={(index) => setSelectedIndex(index)}
                 />
 
                 {/* === Section 3 === */}
-               <GallerySection 
+                <GallerySection
                     title="Подстригване"
                     photos={haircutPhotos}
-                    onClickPhoto={setSelectedImage}
+                    onClickPhoto={(index) => setSelectedIndex(index)}
                 />
             </div>
 
-            {selectedImage && (
+            {selectedIndex !== null && (
                 <div
                     className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
-                    onClick={() => setSelectedImage(null)}
+                    onClick={() => setSelectedIndex(null)}
                 >
-                    <div className="relative max-w-3xl w-full p-4" onClick={(e) => e.stopPropagation()}>
+                    <div
+                        className="relative max-w-3xl w-full p-4"
+                        onClick={(e) => e.stopPropagation()}
+                    >
                         <Image
-                            src={selectedImage}
+                            src={allPhotos[selectedIndex]}
                             alt="Expanded"
                             width={1200}
                             height={1200}
@@ -83,9 +103,21 @@ export default function GalleryPage() {
                         />
                         <button
                             className="absolute top-2 right-2 text-white text-3xl font-bold hover:text-[#b4ac77] transition-colors"
-                            onClick={() => setSelectedImage(null)}
+                            onClick={() => setSelectedIndex(null)}
                         >
                             ×
+                        </button>
+                        <button
+                            className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold px-2 hover:text-[#b4ac77] transition-colors"
+                            onClick={prevPhoto}
+                        >
+                            ‹
+                        </button>
+                        <button
+                            className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold px-2 hover:text-[#b4ac77] transition-colors"
+                            onClick={nextPhoto}
+                        >
+                            ›
                         </button>
                     </div>
                 </div>
