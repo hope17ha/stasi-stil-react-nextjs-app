@@ -1,7 +1,8 @@
 
+"use client"
 import Image  from "next/image";
 
-export default function GallerySection({title, photos}) {
+export default function GallerySection({title, photos, onClickPhoto}) {
     return (
 
         <div>
@@ -15,6 +16,7 @@ export default function GallerySection({title, photos}) {
                     <div
                         key={i}
                         className="relative aspect-square overflow-hidden rounded-2xl shadow-lg border border-[#b4ac77]/30"
+                        onClick={() => onClickPhoto(src)}
                     >
                         <Image
                             src={src}
