@@ -6,11 +6,23 @@ import {
     hairstylePhotos,
 } from "@/data/galleryPhotos";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function GalleryPage() {
 
     const [selectedImage, setSelectedImage] = useState(null);
+
+    useEffect(() => {
+        const handleKeydown = (e) => {
+            if (e.key === 'Escape'){
+                setSelectedImage(null);
+            };
+        };
+
+        window.addEventListener('keydown', handleKeydown);
+        return () => window.removeEventListener('keydown', handleKeydown);
+
+    }, []);
 
     return (
         <section
