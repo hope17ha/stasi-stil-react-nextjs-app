@@ -61,9 +61,10 @@ export default function ReviewPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                     {loading ? (
-                        <p className="text-gray-300 text-center">
-                            Зареждане на ревюта...
-                        </p>
+                         <div className="col-span-full flex justify-center items-center py-20">
+                        <Image src="https://i.imgur.com/llF5iyg.gif" alt="loading" width={40} height={40} />
+                        </div>
+
                     ) : reviews.length === 0 ? (
                         <p className="text-gray-300 text-center">
                             Все още няма ревюта.
