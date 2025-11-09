@@ -106,7 +106,7 @@ export const services = [
         id: 4,
         title: "Прически",
         description: `Официални и ежедневни прически - плитки, букли, кокове и персонализирани решения за специални поводи.`,
-        img: "/services/hairstyle.jpg",
+        img: "/services/hairstyle.jpeg",
         alt: "Прически",
         prices: [
             {
