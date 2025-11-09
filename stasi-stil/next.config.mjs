@@ -2,7 +2,14 @@
 const nextConfig = {
     images: {
         qualities: [75, 100], // разрешени стойности за quality
-        domains: ["i.imgur.com"],
+        remotePatterns: [
+          {
+            protocol: "https",
+            hostname: "i.imgur.com",
+            port: "",
+            pathname: "/**", // разрешаваме всички пътища
+          },
+        ],
       }
 };
 

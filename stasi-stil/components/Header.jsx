@@ -1,8 +1,26 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+import { HiMenu, HiX } from "react-icons/hi";
 
 export default function Header() {
+
+    const navigationOptions = [  
+    { label: "Начало", href: "/" },
+    { label: "За нас", href: "/about" },
+    { label: "Услуги", href: "/services" },
+    { label: "Галерия", href: "/gallery" },
+    { label: "Контакти", href: "/contacts" },
+    { label: "Отзиви", href: "/reviews" }
+    ];
+
+    const [isOpen, setIsOpen] = useState(false);
+
+
     return (
-        <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-b from-black/95 via-black/90 to-black/70 backdrop-blur-sm shadow-[0_2px_20px_rgba(0,0,0,0.5)] border-b border-[#b4ac77]/20 transition-all">
+        <header className={`fixed top-0 left-0 w-full z-50 transition-all  
+        ${isOpen ? 'bg-black backdrop-none' : 'bg-gradient-to-b from-black/95 via-black/90 to-black/70 backdrop-blur-sm'}`}>
             <div className="max-w-7xl mx-auto px-6 lg:px-8 py-2 flex items-center justify-between">
                 {/* Logo */}
                 <a href="/" className="flex items-center">
@@ -18,14 +36,7 @@ export default function Header() {
 
                 {/* Navigation */}
                 <nav className="hidden md:flex items-center space-x-10 text-xl text-white font-semibold">
-                    {[
-                        { label: "Начало", href: "/" },
-                        { label: "За нас", href: "/about" },
-                        { label: "Услуги", href: "/services" },
-                        { label: "Галерия", href: "/gallery" },
-                        { label: "Контакти", href: "/contacts" },
-                        { label: "Отзиви", href: "/reviews" },
-                    ].map((item) => (
+                    {navigationOptions.map((item) => (
                         <a
                             key={item.label}
                             href={item.href}
@@ -43,7 +54,59 @@ export default function Header() {
                 >
                     Запиши час
                 </a>
+
+                  {/* Mobile Menu Button */}
+                  <button onClick={() => setIsOpen(true)} className="md:hidden text-white text-3xl">
+                    <HiMenu />
+                </button>
             </div>
+
+            {/* Fade bottom */}
+            <div className="absolute bottom-[-8px] left-0 w-full h-[8px] bg-gradient-to-b from-black/80 to-transparent" />
+
+            {/* Overlay */}
+            <div
+                className={`fixed inset-0 bg-black transition-opacity duration-300 ${
+                    isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+                }`}
+                onClick={() => setIsOpen(false)}
+            />
+
+            {/* Drawer (Right Panel) */}
+            <div
+                className={`fixed top-0 right-0 h-full w-72 bg-black border-l border-[#b4ac77] px-6 py-8 flex flex-col space-y-8 transition-transform duration-300  z-50 ${
+                    isOpen ? "translate-x-0" : "translate-x-full"
+                }`}
+            >
+                {/* Close Button */}
+                <button onClick={() => setIsOpen(false)} className="self-end text-white text-3xl">
+                    <HiX />
+                </button>
+
+                {/* Navigation Links */}
+                <nav className="flex flex-col space-y-6 text-xl text-white font-medium">
+                    {navigationOptions.map((item) => (
+                        <a
+                            key={item.label}
+                            href={item.href}
+                            onClick={() => setIsOpen(false)}
+                            className="hover:text-[#b4ac77] transition-colors"
+                        >
+                            {item.label}
+                        </a>
+                    ))}
+                </nav>
+
+                {/* CTA Button inside drawer */}
+                <a
+                    href="/contacts"
+                    onClick={() => setIsOpen(false)}
+                    className="bg-[#b4ac77] text-black text-center font-medium py-2 rounded-full hover:bg-[#9f9246] transition-all"
+                >
+                    Запиши час
+                </a>
+            </div>
+         
 
             {/* Fade ефект под хедъра */}
             <div className="absolute bottom-[-8px] left-0 w-full h-[8px] bg-gradient-to-b from-black/80 to-transparent"></div>
