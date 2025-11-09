@@ -13,7 +13,7 @@ export default function ServicesPage() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Заглавие */}
           <div className="mb-16 text-center">
-            <h2 className="font-heading mb-4 font-bold tracking-tight text-[#b4ac77] text-3xl sm:text-5xl">
+            <h2 className="font-heading mb-4 font-bold tracking-tight text-[#b4ac77] text-3xl sm:text-5xl p-5">
               Нашите услуги
             </h2>
             <p className="mx-auto max-w-3xl text-base sm:text-lg md:text-xl text-white/80">

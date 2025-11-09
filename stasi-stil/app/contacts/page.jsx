@@ -16,7 +16,7 @@ export default function ContactsPage() {
                         src="/contacts2.jpg"
                         alt="Contacts"
                         fill
-                        style={{ objectFit: "contain", objectPosition: "30% 50%" }}
+                        style={{ objectFit: "cover", objectPosition: "30% 50%" }}
                         quality={100}
                         priority
                     />
@@ -38,12 +38,12 @@ export default function ContactsPage() {
                 <div className="flex items-stretch justify-center">
                     <div className="grid md:grid-cols-2 gap-8">
                         {/* Ляв блок: информация */}
-                        <div className="h-full pr-6 text-white">
+                        <div className="text-white px-4 sm:px-6 md:pr-6">
                             <p className="mt-3 mb-12 text-lg text-white/80">
                                 Може да се свържете с нас по следните начини:
                             </p>
                             <ul className="space-y-6">
-                                <li className="flex border border-gray-300 rounded-lg p-4 bg-black/40">
+                                <li className="flex flex-col sm:flex-row items-start sm:items-center border border-gray-300 rounded-lg p-4 bg-black/40">
                                     <div className="flex h-10 w-10 items-center justify-center rounded bg-goldish text-white">
                                         {/* Икона */}
                                         <svg
@@ -62,7 +62,7 @@ export default function ContactsPage() {
                                             <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"></path>
                                         </svg>
                                     </div>
-                                    <div className="ml-4">
+                                    <div className="ml-0 mt-2 sm:ml-4 sm:mt-0">
                                         <h3 className="mb-2 text-lg font-medium text-[#b4ac77]">
                                             Нашият адрес
                                         </h3>
@@ -71,7 +71,7 @@ export default function ContactsPage() {
                                     </div>
                                 </li>
 
-                                <li className="flex border border-gray-300 rounded-lg p-4 bg-black/40">
+                                <li className="flex flex-col sm:flex-row items-start sm:items-center border border-gray-300 rounded-lg p-4 bg-black/40">
                                     <div className="flex h-10 w-10 items-center justify-center rounded bg-goldish text-white">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +90,7 @@ export default function ContactsPage() {
                                             <path d="M15 3a6 6 0 0 1 6 6"></path>
                                         </svg>
                                     </div>
-                                    <div className="ml-4 flex flex-col space-y-1">
+                                    <div className="ml-0 mt-2 sm:ml-4 sm:mt-0">
                                         <h3 className="mb-2 text-lg font-medium text-[#b4ac77]">
                                             Контакти
                                         </h3>
@@ -110,7 +110,7 @@ export default function ContactsPage() {
                                     </div>
                                 </li>
 
-                                <li className="flex border border-gray-300 rounded-lg p-4 bg-black/40">
+                                <li className="flex flex-col sm:flex-row items-start sm:items-center border border-gray-300 rounded-lg p-4 bg-black/40">
                                     <div className="flex h-10 w-10 items-center justify-center rounded bg-goldish text-white">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +128,7 @@ export default function ContactsPage() {
                                             <path d="M12 7v5l3 3"></path>
                                         </svg>
                                     </div>
-                                    <div className="ml-4">
+                                    <div className="ml-0 mt-2 sm:ml-4 sm:mt-0">
                                         <h3 className="mb-2 text-lg font-medium text-[#b4ac77]">
                                             Работно време
                                         </h3>
@@ -168,7 +168,7 @@ export default function ContactsPage() {
                     </div>
                 </div>
             </div>
-            <section className="relative bg-black/70 py-16 px-4">
+            <section className="relative bg-black/70 px-4 sm:px-6">
                 <div className="max-w-3xl mx-auto">
                     <h2 className="text-3xl font-bold text-center text-[#b4ac77] mb-6">
                         Изпратете ни съобщение
