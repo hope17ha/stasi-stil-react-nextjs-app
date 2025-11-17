@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 export const metadata = {
-    title: 'Начална страница | СТАСИ СТИЛ ФРИЗЬОРСКИ САЛОН'
+    title: 'Home Page | STASI STIL HAIR SALON'
 };
 
 export default function Home() {
@@ -26,15 +26,13 @@ export default function Home() {
             {/* Hero секция */}
             <section className="relative z-10 flex flex-col items-center justify-center text-center min-h-screen px-6">
                 <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 drop-shadow-lg animate-fade-in">
-                <span className="text-accent">Добре дошли в</span>
+                <span className="text-accent">Welcome to</span>
                 {" "}
-                <span className="text-accent">Стаси Стил !</span>
+                <span className="text-accent">Stasi Stil !</span>
                 </h1>
 
                 <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl animate-fade-in delay-200">
-                    Професионален фризьорски салон, където красотата и стилът се
-                    срещат. Подчертайте своята индивидуалност с грижа и внимание
-                    към всеки детайл.
+                A professional hair salon where beauty and style meet. Highlight your individuality with care and attention to every detail.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -42,20 +40,20 @@ export default function Home() {
                         href="/about"
                         className="bg-transparent border border-white/70 hover:bg-white/20 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300"
                     >
-                        Научи повече за нас
+                        Learn more about us
                     </a>
 
                     <a
                         href="/services"
                         className="bg-transparent border border-white/70 hover:bg-white/20 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300"
                     >
-                        Виж услугите
+                        See our services
                     </a>
                     <a
                         href="#"
                         className="bg-transparent border border-white/70 hover:bg-white/20 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300"
                     >
-                        Запази час
+                       Book an appointment
                     </a>
                 </div>
             </section>
