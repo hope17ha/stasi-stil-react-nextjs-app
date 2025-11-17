@@ -3,7 +3,7 @@ import { salonPhotos, seminarPhotos, personalPhotos } from '@/data/aboutPhotos'
 
 
 export const metadata = {
-    title: 'За нас | СТАСИ СТИЛ ФРИЗЬОРСКИ САЛОН'
+    title: 'About us | STASI STIL HAIR SALON'
 };
 
 export default function AboutPage() {
@@ -39,10 +39,10 @@ export default function AboutPage() {
             <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20 text-white">
                 <div className="mb-12 text-center">
                     <h2 className="font-heading mb-6 text-3xl sm:text-5xl font-bold text-[#b4ac77]">
-                        За нас
+                       About us
                     </h2>
                     <p className="max-w-3xl mx-auto text-lg text-white/80">
-                        Красотата е вдъхновение, което започва от теб.
+                        Beauty is the inspiration that starts with you.
                     </p>
                 </div>
 
@@ -66,49 +66,34 @@ export default function AboutPage() {
                     <div className="space-y-6 text-lg leading-relaxed">
                         <p>
                             <span className="text-[#b4ac77] font-semibold">
-                                Салон „Стаси Стил“
+                                "Stasi Stil" Salon
                             </span>{" "}
-                            отваря врати през май 2001 г. с мисия да създава
-                            красота, увереност и индивидуален стил чрез силата
-                            на прическата. Основател и водещ стилист е{" "}
+                            opened its doors in May 2001 with a mission to create beauty, confidence, and individual style through the power of a hairstyle. The founder and lead stylist is{" "}
                             <span className="font-semibold text-[#b4ac77]">
-                                Станислава Анастасова
+                                Stanislava Anastasova
                             </span>{" "}
-                            – майстор фризьор с дългогодишен опит и страст към
-                            детайла.
+                            - a master hairdresser with many years of experience and a passion for detail.
                         </p>
 
                         <p>
-                            В салона се предлагат висококачествени услуги –
-                            подстригване, колористика (включително тон върху
-                            тон, тотален блонд, кичури, балеаж), терапии за
-                            коса, къдрене, сешоар, официални прически и
-                            професионални продукти за домашна грижа.
+                        The salon offers high-quality services – haircuts, coloring (including tone-on-tone, full blonde, highlights, balayage), hair treatments, curling, blow-drying, formal hairstyles, and professional products for home care.
                         </p>
 
                         <p>
-                            Станислава непрекъснато усъвършенства уменията си,
-                            като има сертификати от{" "}
+                        Stanislava continuously hones her skills, holding certificates from{" "}
                             <span className="italic text-[#b4ac77]">
-                                Keune Academy (Холандия), Sassoon Academy
-                                (Лондон), Artistique, American Crew Barber
-                                Class, Christian of Roma
+                            Keune Academy (Netherlands), Sassoon Academy (London), Artistique, American Crew Barber Class, Christian of Roma
                             </span>{" "}
-                            и други водещи академии. 
+                            and other leading academies.
                         </p>
-                        <p>Притежава{" "}
+                        <p>She also holds a{" "}
                             <span className="font-semibold text-[#b4ac77]">
-                                Майсторско свидетелство
+                            Master Certificate
                             </span>{" "}
-                            от Националната занаятчийска камара на Република
-                            България.
+                            from the National Crafts Chamber of the Republic of Bulgaria.
                             </p>
                         <p>
-                            Позитивна и приятелски настроена, тя вярва, че
-                            добрата визия започва с доверие и индивидуален
-                            подход. В „Стаси Стил“ ще откриете професионализъм,
-                            уют и атмосфера, в която ще се почувствате
-                            специални.
+                        Positive and friendly, she believes that a great look starts with trust and an individual approach. At “Stasi Stil” you will find professionalism, comfort, and an atmosphere where you will feel special."
                         </p>
                     </div>
                 </div>
@@ -118,7 +103,7 @@ export default function AboutPage() {
                     {/* 1️⃣ Лични моменти */}
                     <div>
                         <h3 className="text-2xl font-semibold text-[#b4ac77] mb-6 text-center">
-                            Лични моменти
+                            Personal moments
                         </h3>
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             {personalPhotos.map((src, i) => {
@@ -144,7 +129,7 @@ export default function AboutPage() {
                     {/* 2️⃣ Семинари и обучения */}
                     <div>
                         <h3 className="text-2xl font-semibold text-[#b4ac77] mb-6 text-center">
-                            Семинари и обучения
+                            Seminars and trainings
                         </h3>
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             {seminarPhotos.map((src, i) => {
@@ -168,7 +153,7 @@ export default function AboutPage() {
                     {/* 3️⃣ Салонът „Стаси Стил“ */}
                     <div>
                         <h3 className="text-2xl font-semibold text-[#b4ac77] mb-6 text-center">
-                            Салонът „Стаси Стил“
+                           "Stasi Stil" Hair salon
                         </h3>
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             {salonPhotos.map((src, i) => {
