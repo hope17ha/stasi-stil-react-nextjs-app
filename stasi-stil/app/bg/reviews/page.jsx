@@ -50,7 +50,7 @@ export default function ReviewPage() {
                 {/* Заглавие */}
                 <div className="text-center mb-14">
                     <h2 className="text-4xl sm:text-5xl font-bold text-[#b4ac77] mb-3">
-                        Отзивите на нашите клиенти
+                        Отзиви на наши клиенти
                     </h2>
                     <p className="text-white/70 text-lg">
                         Вашето мнение ни вдъхновява да бъдем по-добри всеки ден.

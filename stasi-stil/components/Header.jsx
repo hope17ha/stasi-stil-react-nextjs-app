@@ -4,18 +4,32 @@ import Image from "next/image";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 
-export default function Header() {
-
-    const navigationOptions = [  
-    { label: "Начало", href: "/" },
-    { label: "За нас", href: "/about" },
-    { label: "Услуги", href: "/services" },
-    { label: "Галерия", href: "/gallery" },
-    { label: "Контакти", href: "/contacts" },
-    { label: "Отзиви", href: "/reviews" }
-    ];
+export default function Header({ lang }) {
 
     const [isOpen, setIsOpen] = useState(false);
+
+    const navigationOptions = lang === 'bg' ? [  
+        { label: "Начало", href: "/bg" },
+        { label: "За нас", href: "/bg/about" },
+        { label: "Услуги", href: "/bg/services" },
+        { label: "Галерия", href: "/bg/gallery" },
+        { label: "Контакти", href: "/bg/contacts" },
+        { label: "Отзиви", href: "/bg/reviews" }
+    ]
+    :
+    [
+        { label: "Home", href: "/en" },
+        { label: "About Us", href: "/en/about" },
+        { label: "Services", href: "/en/services" },
+        { label: "Gallery", href: "/en/gallery" },
+        { label: "Contacts", href: "/en/contacts" },
+        { label: "Reviews", href: "/en/reviews" }
+    ];
+
+
+    const ctaLabel = lang === 'bg' ? 'Запази час' : 'Book an appointment';
+    const otherLangHref = lang === 'bg' ? '/en' : '/bg';
+    const otherLangText = lang === 'bg' ? 'EN' : 'BG';
 
 
     return (
@@ -23,7 +37,7 @@ export default function Header() {
         ${isOpen ? 'bg-black backdrop-none' : 'bg-gradient-to-b from-black/95 via-black/90 to-black/70 backdrop-blur-sm'}`}>
             <div className="max-w-7xl mx-auto px-6 lg:px-8 py-2 flex items-center justify-between">
                 {/* Logo */}
-                <a href="/" className="flex items-center">
+                <a href={lang === 'bg' ? '/bg' : '/en'} className="flex items-center">
                     <Image
                         src="/logo.png"
                         alt="Стаси Стил"
@@ -47,13 +61,22 @@ export default function Header() {
                     ))}
                 </nav>
 
-                {/* Call-to-Action */}
-                <a
-                    href="/contacts"
-                    className="hidden md:inline-block bg-[#b4ac77] text-black font-medium py-1.5 px-5 rounded-full shadow-md hover:bg-[#9f9246] hover:shadow-lg transition-all duration-300 text-base"
-                >
-                    Запиши час
-                </a>
+                {/* Right side buttons: Language Switch + CTA */}
+                <div className="hidden md:flex items-center space-x-4">
+
+
+                    {/* CTA */}
+                    <a
+                        href={lang === 'bg' ? '/bg' : '/en'}
+                        className="bg-[#b4ac77] text-black font-medium py-1.5 px-5 rounded-full shadow-md hover:bg-[#9f9246] hover:shadow-lg transition-all duration-300 text-base"
+                    >
+                        {ctaLabel}
+                    </a>
+                    {/* Language Switch */}
+                    <div className="flex space-x-2 text-white font-medium">
+                        <a href={otherLangHref} className="hover:text-[#b4ac77] transition-all">{otherLangText}</a>
+                    </div>
+                </div>
 
                   {/* Mobile Menu Button */}
                   <button onClick={() => setIsOpen(true)} className="md:hidden text-white text-3xl">
@@ -99,12 +122,16 @@ export default function Header() {
 
                 {/* CTA Button inside drawer */}
                 <a
-                    href="/contacts"
+                    href={lang === 'bg' ? '/bg' : '/en'}
                     onClick={() => setIsOpen(false)}
                     className="bg-[#b4ac77] text-black text-center font-medium py-2 rounded-full hover:bg-[#9f9246] transition-all"
                 >
-                    Запиши час
+                    {ctaLabel}
                 </a>
+            <div className="flex space-x-4 justify-center text-white pt-4 text-lg">
+                    <a href={otherLangHref} className="hover:text-[#b4ac77]">{otherLangText}</a>
+                
+                </div>
             </div>
          
 
