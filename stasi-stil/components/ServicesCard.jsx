@@ -1,9 +1,15 @@
 "use client";
 import { useState } from "react";
-import { services } from "../data/services.js";
+import { getServices } from '@/data/services.js'
 
-export default function ServicesCard() {
+export default function ServicesCard({ lang }) {
     const [openMoreId, setOpenMore] = useState(null);
+
+    const services = getServices(lang);
+
+    const moreBtn = lang === 'bg' ? 'Научи повече' : 'Learn more';
+    const lessBtn = lang === 'bg' ? 'Скрий подробности' : 'Hide details';
+    const pInfo = lang === 'bg' ? 'Цените включват свободно изсушаване и стилизиране на косата. Всички цени са в български лева/евро, с включено ДДС за 1 брой услуга. Цената за боядисване е за един брой опаковка или за една доза.' : 'The prices include free drying and styling of the hair. All prices are in Bulgarian lev/Euro, including VAT for one service. The price for coloring is for one package or one dose.'
 
     return (
         <div>
@@ -42,8 +48,8 @@ export default function ServicesCard() {
                                         className="inline-block rounded-full border border-[#b4ac77] px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium text-white transition-colors duration-300 hover:bg-[#b4ac77] hover:text-black"
                                     >
                                         {openMoreId === s.id
-                                            ? "Скрий подробности"
-                                            : "Научи повече"}
+                                            ? lessBtn
+                                            : moreBtn }
                                     </button>
                                 </div>
                             </div>
@@ -83,11 +89,7 @@ export default function ServicesCard() {
                                     </li>
                                 ))}
                                 <p className="text-[#b4ac77]/90 text-sm md:text-base leading-relaxed mt-6 border-t border-[#b4ac77]/30 pt-4 italic">
-                                    Цените включват свободно изсушаване и
-                                    стилизиране на косата. Всички цени са в
-                                    български лева/евро, с включено ДДС за 1
-                                    брой услуга. Цената за боядисване е за един
-                                    брой опаковка или за една доза.
+                                    {pInfo}
                                 </p>
                             </ul>
                         </div>

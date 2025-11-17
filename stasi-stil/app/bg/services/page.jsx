@@ -1,4 +1,4 @@
-import ServicesCard from '@/components/ServicesCard';
+import ServiceWrapper from '@/app/en/services/ServiceWrapper';
 
 export const metadata = {
   title: 'Фризьорски услуги | СТАСИ СТИЛ ФРИЗЬОРСКИ САЛОН'
@@ -21,8 +21,8 @@ export default function ServicesPage() {
             </p>
           </div>
   
-          {/* Картички */}
-          <ServicesCard />
+          {/* Client component */}
+          <ServiceWrapper />
   
           <div className="mt-16 text-center">
             <p className="text-white/70 text-lg">
