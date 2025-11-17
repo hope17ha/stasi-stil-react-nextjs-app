@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
+import LanguageSwitcher from "@/components/LanguageSwitcher"; 
 
 export default function Header({ lang }) {
 
@@ -28,9 +29,6 @@ export default function Header({ lang }) {
 
 
     const ctaLabel = lang === 'bg' ? 'Запази час' : 'Book an appointment';
-    const otherLangHref = lang === 'bg' ? '/en' : '/bg';
-    const otherLangText = lang === 'bg' ? 'EN' : 'BG';
-
 
     return (
         <header className={`fixed top-0 left-0 w-full z-50 transition-all  
@@ -74,7 +72,7 @@ export default function Header({ lang }) {
                     </a>
                     {/* Language Switch */}
                     <div className="flex space-x-2 text-white font-medium">
-                        <a href={otherLangHref} className="hover:text-[#b4ac77] transition-all">{otherLangText}</a>
+                    <LanguageSwitcher currentLang={lang} />
                     </div>
                 </div>
 
@@ -129,7 +127,7 @@ export default function Header({ lang }) {
                     {ctaLabel}
                 </a>
             <div className="flex space-x-4 justify-center text-white pt-4 text-lg">
-                    <a href={otherLangHref} className="hover:text-[#b4ac77]">{otherLangText}</a>
+            <LanguageSwitcher currentLang={lang} />
                 
                 </div>
             </div>
