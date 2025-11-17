@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
+//TODO fix 'sending' message before initializing the error message process
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req) {
