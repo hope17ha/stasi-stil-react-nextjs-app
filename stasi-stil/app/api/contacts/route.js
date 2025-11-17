@@ -6,18 +6,25 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(req) {
     try {
         const body = await req.json();
-        const { name, email, message } = body;
+        const { name, email, message, lang = 'bg' } = body;
+
+        const errors = {
+            emptyFields: lang === "bg" ? "Липсващи полета." : "Missing fields.",
+            invalidEmail: lang === "bg" ? "Невалиден формат на email адрес." : "Invalid email format.",
+            failed: lang === "bg" ? "Възникна грешка." : "Failed to send message",
+            subject: lang === "bg" ? `Ново съобщение от ${name}` : `New message from ${name}`
+          };
 
         if (!name || !email || !message) {
             return NextResponse.json(
-                { error: "Липсващи полета." },
+                { error: errors.emptyFields },
                 { status: 400 }
             );
         }
 
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
             return NextResponse.json(
-                { error: 'Невалиден формат на email адрес.'},
+                { error: errors.invalidEmail },
                 { status: 400 }
             );
         }
@@ -26,11 +33,11 @@ export async function POST(req) {
             from: "Contact Form <onboarding@resend.dev>",
             to: process.env.TO_EMAIL,
             replyTo: email,
-            subject: `Ново съобщение от ${name}`,
+            subject: errors.subject ,
             html: `
-            <p><strong>Име:</strong> ${name}</p>
-            <p><strong>Имейл:</strong> ${email}</p>
-            <p><strong>Съобщение:</strong></p>
+            <p><strong>${lang === "bg" ? "Име" : "Name"}:</strong> ${name}</p>
+            <p><strong>${lang === "bg" ? "Имейл" : "Email"}:</strong> ${email}</p>
+            <p><strong>${lang === "bg" ? "Съобщение" : "Message"}:</strong></p>
             <p>${message}</p>
           `,
         });

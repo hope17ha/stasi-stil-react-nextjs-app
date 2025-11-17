@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-export default function ContactForm() {
+export default function ContactForm({ lang }) {
     const [state, setState] = useState(null);
     const [formData, setFormData] = useState({
         name: "",
@@ -10,12 +10,23 @@ export default function ContactForm() {
     });
     const [errorMessage, setErrorMessage] = useState('');
 
+    const emptyFieldError = lang === 'bg' ? '❌ Моля попълнете всички полета правилно.' : '❌ Please fill out all fields correctly';
+    const errorMsg = lang === 'bg' ? 'Възникна грешка.' : 'Error';
+    const sendMsgText = lang === 'bg' ? 'Изпрати съобщение' : 'Send a message';
+    const sentMsgText = lang === 'bg' ? ' ✅ Съобщението е изпратено успешно!' : ' ✅ The message was sent successfully!';
+    const namePlaceholder = lang === 'bg' ? 'Име' : 'Name';
+    const emailPlaceholder = lang === 'bg' ? 'Имейл' : 'Email';
+    const messsagePlaceholder = lang === 'bg' ? 'Съобщение' : 'Message';
+    const sendBtnText = lang === 'bg' ? 'Изпрати' : 'Send';
+    const sendingBtnText = lang === 'bg' ? 'Изпращане...' : 'Sending...';
+
+
     async function onSubmit(e) {
         e.preventDefault();
 
         if (!formData.name || !formData.email || !formData.message) {
             setState('error');
-            setErrorMessage('❌ Моля попълнете всички полета правилно.');
+            setErrorMessage(`${emptyFieldError}`);
             return;
         }
 
@@ -26,7 +37,7 @@ export default function ContactForm() {
             const result = await fetch("/api/contacts", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({...formData, lang}),
             });
 
             const data = await result.json();
@@ -36,7 +47,7 @@ export default function ContactForm() {
                 setFormData({ name: "", email: "", message: "" });
             } else {
                 setState("error");
-                setErrorMessage(data.error || 'Възникна грешка.');
+                setErrorMessage(data.error || `${errorMsg}`);
             }
         } catch (error) {
             setState("error");
@@ -60,13 +71,13 @@ export default function ContactForm() {
             className="space-y-4 bg-gray-200/20 p-6 rounded-xl max-w-lg mx-auto"
         >
             <h3 className="text-2xl font-semibold text-center text-white mb-4">
-                Изпрати съобщение
+                {sendMsgText}
             </h3>
 
             <input
                 type="text"
                 name="name"
-                placeholder="Име"
+                placeholder={namePlaceholder}
                 value={formData.name}
                 onChange={onChange}
                 className="w-full p-3 rounded bg-white/10 text-white placeholder-gray-400 focus:outline-none"
@@ -76,7 +87,7 @@ export default function ContactForm() {
             <input
                 type="email"
                 name="email"
-                placeholder="Имейл"
+                placeholder={emailPlaceholder}
                 value={formData.email}
                 onChange={onChange}
                 className="w-full p-3 rounded bg-white/10 text-white placeholder-gray-400 focus:outline-none"
@@ -84,7 +95,7 @@ export default function ContactForm() {
             />
 
             <textarea
-                placeholder="Съобщение"
+                placeholder={messsagePlaceholder}
                 name="message"
                 rows="5"
                 value={formData.message}
@@ -98,12 +109,12 @@ export default function ContactForm() {
                 disabled={state === "loading"}
                 className="w-full bg-[#b4ac77] text-black font-semibold py-3 rounded hover:bg-[#c5bb7f] transition"
             >
-                {state === "loading" ? "Изпращане..." : "Изпрати"}
+                {state === "loading" ? sendingBtnText : sendBtnText}
             </button>
 
             {state === "success" && (
                 <p className="text-green-400 text-center">
-                    ✅ Съобщението е изпратено успешно!
+                   {sentMsgText}
                 </p>
             )}
             {state === "error" && (

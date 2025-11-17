@@ -173,7 +173,7 @@ export default function ContactsPage() {
                     <h2 className="text-3xl font-bold text-center text-[#b4ac77] mb-6">
                         Изпратете ни съобщение
                     </h2>
-                    <ContactForm />
+                    <ContactForm lang="en" />
                 </div>
             </section>
         </section>
