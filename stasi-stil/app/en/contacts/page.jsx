@@ -1,9 +1,10 @@
 import ContactForm from "@/components/ContactForm";
 import Image from "next/image";
 
+//TODO: Fix iframe from GoogleMaps in english option
 
 export const metadata = {
-    title: 'Контакти | СТАСИ СТИЛ ФРИЗЬОРСКИ САЛОН'
+    title: 'Contacts | STASI STIL HAIR SALON'
 };
 
 export default function ContactsPage() {
@@ -28,10 +29,10 @@ export default function ContactsPage() {
             <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
                 <div className="mb-4 text-center">
                     <h2 className="font-heading mb-4 font-bold text-decoration-line tracking-tight text-[#b4ac77] text-3xl sm:text-5xl">
-                        Свържи се с нас
+                        Contact us
                     </h2>
                     <p className="mx-auto mt-4 max-w-3xl text-xl text-white/80">
-                        Винаги сме насреща да ви помогнем!
+                        We are always here to help!
                     </p>
                 </div>
 
@@ -40,7 +41,7 @@ export default function ContactsPage() {
                         {/* Ляв блок: информация */}
                         <div className="text-white px-4 sm:px-6 md:pr-6">
                             <p className="mt-3 mb-12 text-lg text-white/80">
-                                Може да се свържете с нас по следните начини:
+                                You can contact us using the following ways:
                             </p>
                             <ul className="space-y-6">
                                 <li className="flex flex-col sm:flex-row items-start sm:items-center border border-gray-300 rounded-lg p-4 bg-black/40">
@@ -64,10 +65,10 @@ export default function ContactsPage() {
                                     </div>
                                     <div className="ml-0 mt-2 sm:ml-4 sm:mt-0">
                                         <h3 className="mb-2 text-lg font-medium text-[#b4ac77]">
-                                            Нашият адрес
+                                            Our address
                                         </h3>
-                                        <p>ж.к. Младост 1А, ул. Сърчице</p>
-                                        <p>град София / България</p>
+                                        <p>Mladost 1A Residential Complex, Surchitse Str., Block 528</p>
+                                        <p>Sofia City / Bulgaria</p>
                                     </div>
                                 </li>
 
@@ -92,21 +93,23 @@ export default function ContactsPage() {
                                     </div>
                                     <div className="ml-0 mt-2 sm:ml-4 sm:mt-0">
                                         <h3 className="mb-2 text-lg font-medium text-[#b4ac77]">
-                                            Контакти
+                                            Contacts
                                         </h3>
                                         <a
                                             href="tel:0897892885"
-                                            className="hover:text-[#b4ac77] transition-colors"
+                                            className="block hover:text-[#b4ac77] transition-colors"
                                         >
-                                            Телефон: +359 897 892 885
+                                            Phone: +359 897 892 885
                                         </a>
+                                     
                                         <a
                                             href="mailto:stanislava.anastasova6@gmail.com"
-                                            className="hover:text-[#b4ac77] transition-colors"
+                                            className="block hover:text-[#b4ac77] transition-colors"
                                         >
                                             Mail:
-                                            stanislava.anastasova6@gmail.com
+                                            <span className="ml-1">stanislava.anastasova6@gmail.com</span>
                                         </a>
+                                  
                                     </div>
                                 </li>
 
@@ -130,22 +133,22 @@ export default function ContactsPage() {
                                     </div>
                                     <div className="ml-0 mt-2 sm:ml-4 sm:mt-0">
                                         <h3 className="mb-2 text-lg font-medium text-[#b4ac77]">
-                                            Работно време
+                                            Working hours
                                         </h3>
                                         <p>
-                                            Понеделник - 10:00 - 19:00
+                                            Monday - 10:00 - 19:00
                                             <br />
-                                            Вторник - 10:00 - 19:00
+                                            Tuesday - 10:00 - 19:00
                                             <br />
-                                            Сряда - почивен ден
+                                            Wednesday - day off
                                             <br />
-                                            Четвъртък - 10:00 - 19:00
+                                            Thursday - 10:00 - 19:00
                                             <br />
-                                            Петък - 10:00 - 19:00
+                                            Friday - 10:00 - 19:00
                                             <br />
-                                            Събота - 10:00 - 17:00
+                                            Saturday - 10:00 - 17:00
                                             <br />
-                                            Неделя - почивен ден
+                                            Sunday - day off
                                         </p>
                                     </div>
                                 </li>
@@ -171,7 +174,7 @@ export default function ContactsPage() {
             <section className="relative bg-black/70 px-4 sm:px-6">
                 <div className="max-w-3xl mx-auto">
                     <h2 className="text-3xl font-bold text-center text-[#b4ac77] mb-6">
-                        Изпратете ни съобщение
+                        Send us a message
                     </h2>
                     <ContactForm lang="en" />
                 </div>

@@ -66,7 +66,7 @@ export default function ContactsPage() {
                                         <h3 className="mb-2 text-lg font-medium text-[#b4ac77]">
                                             Нашият адрес
                                         </h3>
-                                        <p>ж.к. Младост 1А, ул. Сърчице</p>
+                                        <p>ж.к. Младост 1А, ул. Сърчице, блок 528</p>
                                         <p>град София / България</p>
                                     </div>
                                 </li>
@@ -96,16 +96,16 @@ export default function ContactsPage() {
                                         </h3>
                                         <a
                                             href="tel:0897892885"
-                                            className="hover:text-[#b4ac77] transition-colors"
+                                            className="block hover:text-[#b4ac77] transition-colors"
                                         >
                                             Телефон: +359 897 892 885
                                         </a>
                                         <a
                                             href="mailto:stanislava.anastasova6@gmail.com"
-                                            className="hover:text-[#b4ac77] transition-colors"
+                                            className="block hover:text-[#b4ac77] transition-colors"
                                         >
-                                            Mail:
-                                            stanislava.anastasova6@gmail.com
+                                            Имейл:
+                                            <span className="ml-1">stanislava.anastasova6@gmail.com</span>
                                         </a>
                                     </div>
                                 </li>
