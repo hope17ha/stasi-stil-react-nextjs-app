@@ -1,15 +1,19 @@
 "use client";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function ReviewPage() {
     const [reviews, setReviews] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const pathname = usePathname();
+    const lang = pathname.startsWith('/bg') ? 'bg' : 'en';
+
     useEffect(() => {
         async function getReviews() {
             try {
-                const result = await fetch("/api/reviews");
+                const result = await fetch(`/api/reviews?lang=${lang}`);
 
                 const data = await result.json();
                 // console.log(data);
@@ -50,10 +54,10 @@ export default function ReviewPage() {
                 {/* Заглавие */}
                 <div className="text-center mb-14">
                     <h2 className="text-4xl sm:text-5xl font-bold text-[#b4ac77] mb-3">
-                        Отзиви на наши клиенти
+                        Reviews from our clients
                     </h2>
                     <p className="text-white/70 text-lg">
-                        Вашето мнение ни вдъхновява да бъдем по-добри всеки ден.
+                        Your opinion motivates us to be better each day.
                     </p>
                 </div>
 
@@ -67,7 +71,7 @@ export default function ReviewPage() {
 
                     ) : reviews.length === 0 ? (
                         <p className="text-gray-300 text-center">
-                            Все още няма ревюта.
+                            No reviews yet.
                         </p>
                     ) : (
                         reviews.map((review, idx) => {
@@ -115,14 +119,14 @@ export default function ReviewPage() {
             </div>
             <div className="flex justify-center mt-12">
             <p className="text-center text-white/90 text-lg sm:text-xl max-w-2xl leading-relaxed">
-            Искате ли да споделите как ни оценявате? За да оставите отзив,{" "}
+            Would you like to share your feedback? To leave a review,{" "}
                 <a
                     href="https://g.page/r/CYs0BGGXbuxOEBM/review"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-[#b4ac77] text-black font-medium py-2 px-6 rounded-full shadow-md hover:bg-[#9f9246] hover:shadow-lg transition-all duration-300 text-base text-center"
                 >
-                   натиснете тук
+                   click here
                 </a> {" "}
                 </p>
             </div>

@@ -1,5 +1,5 @@
 export const metadata = {
-    title: 'Отзиви | СТАСИ СТИЛ ФРИЗЬОРСКИ САЛОН'
+    title: 'Reviews | STASI STIL HAIR SALON'
   };
 
 export default function ReviewsLayout ({ children }){

@@ -1,10 +1,12 @@
 
 
-export async function GET(){
+export async function GET(req){
 
-    const fetchURI = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${process.env.PLACE_ID}&fields=name,formatted_address,rating,user_ratings_total,reviews&key=${process.env.GOOGLE_API_KEY}&language=bg`;
+    const {searchParams} = new URL(req.url);
+    const lang = searchParams.get('lang') || 'bg';
+
+    const fetchURI = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${process.env.PLACE_ID}&fields=name,formatted_address,rating,user_ratings_total,reviews&key=${process.env.GOOGLE_API_KEY}&language=${lang}`;
     
-
 
     try {
         const response = await fetch(fetchURI);
