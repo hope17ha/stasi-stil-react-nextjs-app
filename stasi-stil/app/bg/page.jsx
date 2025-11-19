@@ -24,7 +24,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-black/25"></div>
 
             {/* Hero секция */}
-            <section className="relative z-10 flex flex-col items-center justify-center text-center min-h-screen px-6">
+            <section className="relative z-10 flex flex-col items-center justify-center text-center min-h-screen px-6 pt-30">
                 <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 drop-shadow-lg animate-fade-in">
                 <span className="text-accent">Добре дошли в</span>
                 {" "}
