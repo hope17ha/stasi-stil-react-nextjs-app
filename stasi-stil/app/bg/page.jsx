@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function Home() {
     return (
-        <main className="relative min-h-screen overflow-hidden text-white">
+        <main className="relative min-h-screen overflow-hidden text-white pt-20">
 
             <div className="absolute inset-0">
                 <Image
