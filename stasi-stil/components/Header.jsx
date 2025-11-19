@@ -33,9 +33,9 @@ export default function Header({ lang }) {
     return (
         <header className={`fixed top-0 left-0 w-full z-50 transition-all  
         ${isOpen ? 'bg-black backdrop-none' : 'bg-gradient-to-b from-black/95 via-black/90 to-black/70 backdrop-blur-sm'}`}>
-            <div className="max-w-7xl mx-auto px-6 lg:px-8 py-2 flex items-center justify-between">
+            <div className="max-w-7xl mx-auto px-6 lg:px-8 py-2 flex flex-wrap md:flex-nowrap items-center justify-between gap-2 md:gap-4">
                 {/* Logo */}
-                <a href={lang === 'bg' ? '/bg' : '/en'} className="flex items-center">
+                <a href={lang === 'bg' ? '/bg' : '/en'} className="flex-shrink-0">
                     <Image
                         src="/logo.png"
                         alt="Стаси Стил"
@@ -47,7 +47,7 @@ export default function Header({ lang }) {
                 </a>
 
                 {/* Navigation */}
-                <nav className="hidden md:flex items-center space-x-10 text-xl text-white font-semibold">
+                <nav className="hidden md:flex hidden lg:flex flex-wrap items-center space-x-10 text-xl text-white font-semibold">
                     {navigationOptions.map((item) => (
                         <a
                             key={item.label}
@@ -60,7 +60,7 @@ export default function Header({ lang }) {
                 </nav>
 
                 {/* Right side buttons: Language Switch + CTA */}
-                <div className="hidden md:flex items-center space-x-4">
+                <div className="hidden md:flex flex items-center space-x-4 flex-shrink-0 mt-2 lg:mt-0">
 
 
                     {/* CTA */}
