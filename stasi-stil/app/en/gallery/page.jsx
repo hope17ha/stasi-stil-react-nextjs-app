@@ -6,6 +6,7 @@ import {
     hairstylePhotos,
 } from "@/data/galleryPhotos";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function GalleryPage() {
@@ -14,6 +15,10 @@ export default function GalleryPage() {
         ...haircolorPhotos,
         ...haircutPhotos,
     ];
+
+    const pathname = usePathname();
+    const lang = pathname.startsWith('/bg') ? 'bg' : 'en';
+
     const [selectedIndex, setSelectedIndex] = useState(null);
 
     const prevPhoto = () => {
@@ -65,21 +70,21 @@ export default function GalleryPage() {
             <div className="relative z-10 w-full max-w-6xl px-6 text-white space-y-24">
                 {/* === Section 1 === */}
                 <GallerySection
-                    title="Прически"
+                    title={lang === 'bg' ? 'Прически' : 'Hairdressing and Styling'}
                     photos={hairstylePhotos}
                     onClickPhoto={(index) => setSelectedIndex(index)}
                 />
 
                 {/* === Section 2 === */}
                 <GallerySection
-                    title="Боядисване и кичури"
+                    title={lang === 'bg' ? 'Боядисване и кичури' : 'Haircolor and highlights'}
                     photos={haircolorPhotos}
                     onClickPhoto={(index) => setSelectedIndex(index)}
                 />
 
                 {/* === Section 3 === */}
                 <GallerySection
-                    title="Подстригване"
+                    title={lang === 'bg' ? 'Подстригване' : 'Haircuts'}
                     photos={haircutPhotos}
                     onClickPhoto={(index) => setSelectedIndex(index)}
                 />
