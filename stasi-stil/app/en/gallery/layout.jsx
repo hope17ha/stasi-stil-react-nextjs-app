@@ -1,5 +1,5 @@
 export const metadata = {
-    title: 'Галерия | СТАСИ СТИЛ ФРИЗЬОРСКИ САЛОН'
+    title: 'Gallery | STASI STIL HAIR SALON'
   };
 
   

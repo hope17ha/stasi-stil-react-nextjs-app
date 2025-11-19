@@ -39,14 +39,14 @@ export default function Home() {
 
                 <div className="flex flex-col sm:flex-row gap-4">
                     <a
-                        href="/about"
+                        href="/bg/about"
                         className="bg-transparent border border-white/70 hover:bg-white/20 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300"
                     >
                         Научи повече за нас
                     </a>
 
                     <a
-                        href="/services"
+                        href="/bg/services"
                         className="bg-transparent border border-white/70 hover:bg-white/20 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300"
                     >
                         Виж услугите

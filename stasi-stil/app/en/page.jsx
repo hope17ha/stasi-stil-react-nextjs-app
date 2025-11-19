@@ -37,14 +37,14 @@ export default function Home() {
 
                 <div className="flex flex-col sm:flex-row gap-4">
                     <a
-                        href="/about"
+                        href="/en/about"
                         className="bg-transparent border border-white/70 hover:bg-white/20 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300"
                     >
                         Learn more about us
                     </a>
 
                     <a
-                        href="/services"
+                        href="/en/services"
                         className="bg-transparent border border-white/70 hover:bg-white/20 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300"
                     >
                         See our services
