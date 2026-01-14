@@ -2,7 +2,8 @@
 export default {
     content: [
       "./app/**/*.{js,jsx,ts,tsx}",
-      "./components/**/*.{js,jsx,ts,tsx}",
+      "./pages/**/*.{js,jsx,ts,tsx}",
+      "./components/**/*.{js,jsx,ts,tsx}"
     ],
     theme: {
       extend: {
@@ -15,16 +16,13 @@ export default {
         },
         fontFamily: {
           sans: ["Poppins", "sans-serif"],
-          serif: ["Playfair Display", "serif"],
+          serif: ["Playfair Display", "serif"]
         },
         boxShadow: {
-          glow: "0 0 15px rgba(249, 168, 212, 0.4)",
-        },
-      },
+          glow: "0 0 15px rgba(249, 168, 212, 0.4)"
+        }
+      }
     },
-    plugins: [],
-    corePlugins: {
-      filter: true, 
-    },
+    plugins: []
   };
   
