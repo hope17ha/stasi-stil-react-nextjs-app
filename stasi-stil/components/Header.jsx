@@ -65,7 +65,9 @@ export default function Header({ lang }) {
 
                     {/* CTA */}
                     <a
-                        href={lang === 'bg' ? '/bg' : '/en'}
+                    href="https://studio24.bg/stasi-stil-s5202?hl=en-BG&gei=-IRnacCZLsyo9u8P8ueVgAk&rwg_token=AFd1xnFasNaoTLTP4Zrrbmj273f8jhq_s4_oQ6SCSLMZnXdZBW-Du5M9jNClwojxSVPb6Nq94CvxW2C1gpFX-l3E2fG0HLBtRA%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
                         className="bg-[#b4ac77] text-black font-medium py-1.5 px-5 rounded-full shadow-md hover:bg-[#9f9246] hover:shadow-lg transition-all duration-300 text-base"
                     >
                         {ctaLabel}
