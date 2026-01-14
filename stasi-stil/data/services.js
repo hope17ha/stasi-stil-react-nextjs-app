@@ -21,7 +21,7 @@ const services = {
             id: 2,
             title: "Боядисване",
             description: `Пълно или частично боядисване — едноцветно, омбре, балаяж. Качествени професионални багрила и грижа за косата.`,
-            img: "/services/haircolor.jpg",
+            img: "/services/haircolor.JPG",
             alt: "Боядисване",
             prices: [
                 {
@@ -70,7 +70,7 @@ const services = {
             id: 3,
             title: "Кичури",
             description: `Технологии за кичури (фолио/без фолио) за естествен или драматичен резултат, с внимание към здравето на косата.`,
-            img: "/services/highlights.jpg",
+            img: "/services/highlights.JPG",
             alt: "Кичури",
             prices: [
                 {
