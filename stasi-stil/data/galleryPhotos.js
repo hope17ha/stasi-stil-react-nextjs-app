@@ -1,5 +1,5 @@
 export const hairstylePhotos = Array.from(
-    { length: 29 },
+    { length: 32 },
     (_, i) => `/gallery/hairstyles/hairstyle-${i + 1}.jpeg`
 );
 
