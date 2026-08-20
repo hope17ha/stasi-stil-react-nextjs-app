@@ -9,7 +9,7 @@ export default function ServicesCard({ lang }) {
 
     const moreBtn = lang === 'bg' ? 'Научи повече' : 'Learn more';
     const lessBtn = lang === 'bg' ? 'Скрий подробности' : 'Hide details';
-    const pInfo = lang === 'bg' ? 'Цените включват свободно изсушаване и стилизиране на косата. Всички цени са евро, с включено ДДС за 1 брой услуга. Цената за боядисване е за един брой опаковка или за една доза.' : 'The prices include free drying and styling of the hair. All prices are in Euro, including VAT for one service. The price for coloring is for one package or one dose.'
+    const pInfo = lang === 'bg' ? 'Цените включват свободно изсушаване и стилизиране на косата. Всички цени са в евро, с включено ДДС за 1 брой услуга. Цената за боядисване е за един брой опаковка или за една доза.' : 'The prices include free drying and styling of the hair. All prices are in Euro, including VAT for one service. The price for coloring is for one package or one dose.'
 
     return (
         <div>
